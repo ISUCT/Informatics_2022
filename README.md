@@ -2,7 +2,7 @@
 
 Вот сюда нужно будет в первой работе с гитом добавит свое ФИО
 
-## ФИО
+Белов Степан Максимович
 
 Обычный текст.
 Еще текст на той же строке (в том же абзаце).
@@ -15,6 +15,14 @@
 Блок кода
 ```
 
-```python
-print("Hello world")
+```C#
+ using System;
+ namespace Informatics_2022{
+    class README{
+        static void Main(){
+            Console.WriteLine("Hello World");
+            Console.ReadLine();
+        }
+    }
+ }
 ```
