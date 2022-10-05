@@ -1,4 +1,4 @@
-# remotes/origin/Novosyolov_Nikolay_Vitalievich
+# Novosyolov_Nikolay_Vitalievich
 
 Вот сюда нужно будет в первой работе с гитом добавит свое ФИО
 
