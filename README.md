@@ -13,7 +13,7 @@
 
 ```
 Блок кода
-```
+``` 
 
 ```C#
  using System;
@@ -21,7 +21,6 @@
     class README{
         static void Main(){
             Console.WriteLine("Hello World");
-            Console.ReadLine();
         }
     }
  }
