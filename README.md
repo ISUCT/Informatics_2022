@@ -18,3 +18,13 @@
 ```python
 print("Hello world")
 ```
+
+# Работа с Git
+
+1. Необходимо создать `fork`
+1. Необходимо склонировать форк локально `git clone "YOU_FORK_URL"`
+1. Переключиться на свою ветку `git checkout YOU_BRANCH`
+1. Внести изменения
+1. Зафиксировать изменения `git add`, `git commit -m "Commit message"`
+1. Залить в свой репозиторий `git push origin YOU_BRANCH`
+1. Открыть Pull request на github
