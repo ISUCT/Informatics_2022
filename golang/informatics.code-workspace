@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+		},
+	},
+	"extensions": {
+		"recommendations": [
+			"golang.go",
+			"eamodio.gitlens"
+		]
+	}
+}
