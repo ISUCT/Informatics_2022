@@ -1,0 +1,15 @@
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\bin\Debug\net6.0\Count_LAB.exe
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\bin\Debug\net6.0\Count_LAB.deps.json
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\bin\Debug\net6.0\Count_LAB.runtimeconfig.json
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\bin\Debug\net6.0\Count_LAB.dll
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\bin\Debug\net6.0\Count_LAB.pdb
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.csproj.AssemblyReference.cache
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.AssemblyInfoInputs.cache
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.AssemblyInfo.cs
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.csproj.CoreCompileInputs.cache
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.dll
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\refint\Count_LAB.dll
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.pdb
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\Count_LAB.genruntimeconfig.cache
+C:\Вуз_Работы\repo\Informatics_2022\Count LAB\obj\Debug\net6.0\ref\Count_LAB.dll
