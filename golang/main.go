@@ -18,8 +18,7 @@ func CalculationY(a float64, с float64) float64 {
 }
 
 func main() {
-	var r *rand.Rand
-	r = rand.New(rand.NewSource(time.Now().UnixNano()))
+	var r *rand.Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	fmt.Println("Results calculation x:")
 	for i := 1; i < 10; i++ {
@@ -38,5 +37,4 @@ func main() {
 		)
 		fmt.Println("a: ", a, "\tc: ", c, "\tresult: ", CalculationY(a, c))
 	}
-
 }
