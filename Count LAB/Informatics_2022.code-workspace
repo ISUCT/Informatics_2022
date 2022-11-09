@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Tprogramming_2022/CourseApp"
+		},
+		{
+			"path": "../../Tprogramming_2022/CourseApp.Tests"
+		},
+		{
+			"path": "../../Tprogramming_2022/.vscode"
+		},
+		{
+			"path": "../../Tprogramming_2022/_stylecop"
+		}
+	],
+	"settings": {}
+}
