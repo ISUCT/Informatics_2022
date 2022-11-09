@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	var a = 1.6
 	fmt.Println("Задание А")
 	for x := 1.2; x <= 3.7; x += 0.5 {
