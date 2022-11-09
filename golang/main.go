@@ -1,40 +1,30 @@
 package main
 
-//variant 12
-
 import (
 	"fmt"
 	"math"
-	"math/rand"
-	"time"
 )
 
-func CalculationX(a float64, b float64, c float64) float64 {
-	return (math.Pow(math.E, math.Sin(a)) + math.Log(math.Abs(math.Cos(b)))) / (3 * c)
-}
+// variant 12
 
-func CalculationY(a float64, с float64) float64 {
-	return math.Sqrt(math.Abs(math.Tan(a) + math.Pow(math.Sin(с), float64(1)/3)))
+func CalculateEquation(x float64, a float64) float64 {
+	var temp float64 = math.Pow(x, 2) - 1
+	return math.Pow(a, temp) - math.Log10(temp) + math.Pow(temp, float64(1)/3)
 }
 
 func main() {
-	var r *rand.Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
+	var a float64 = 1.6
 
-	fmt.Println("Results calculation x:")
-	for i := 1; i < 10; i++ {
-		var (
-			a float64 = float64(r.Intn(100))
-			b float64 = float64(r.Intn(100))
-			c float64 = float64(r.Intn(100))
-		)
-		fmt.Println("a: ", a, "\tb: ", b, "\tc: ", c, "\tresult: ", CalculationX(a, b, c))
+	// Task A
+	fmt.Println("Task A")
+	for i := 1.2; i <= 3.7; i += 0.5 {
+		fmt.Println("x = ", i, "\ty = ", CalculateEquation(i, a))
 	}
-	fmt.Println("Results calculation y:")
-	for i := 1; i < 10; i++ {
-		var (
-			a float64 = float64(r.Intn(100))
-			c float64 = float64(r.Intn(100))
-		)
-		fmt.Println("a: ", a, "\tc: ", c, "\tresult: ", CalculationY(a, c))
+
+	// Task B
+	fmt.Println("Task B")
+	var x [5]float64 = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
+	for i := 0; i < 5; i++ {
+		fmt.Println("x = ", x[i], "\ty = ", CalculateEquation(x[i], a))
 	}
 }
