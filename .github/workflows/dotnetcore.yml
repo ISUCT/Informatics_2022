@@ -1,0 +1,27 @@
+name: .NET Core
+
+on: [push,  pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [ '2.1', '5.0.x', '6.0.x' ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+        include-prerelease: true
+    - name: Build with dotnet
+      run: |
+        cd CourseApp 
+        dotnet build --configuration Release
+    - name: Run tests
+      run: |
+        cd CourseApp.Tests
+        dotnet test
