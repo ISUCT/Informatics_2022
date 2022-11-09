@@ -20,17 +20,16 @@ func solveTaskA(a float64, b float64, xs float64, xe float64, dx float64) {
 	} 
 }
 
-func solveTaskB(a float64, b float64, x1 float64, x2 float64, x3 float64, x4 float64, x5 float64) {
-	fmt.Println(solveFunction(a, b, x1))
-	fmt.Println(solveFunction(a, b, x2))
-	fmt.Println(solveFunction(a, b, x3))
-	fmt.Println(solveFunction(a, b, x4))
-	fmt.Println(solveFunction(a, b, x5))
+func solveTaskB(a float64, b float64, args [5]float64) {
+	for i:=0; i<len(args); i++ {
+		fmt.Println(solveFunction(a, b, args[i]))
+	}
 }
 
 func solveTask() {
 	fmt.Println("TASK A")
 	solveTaskA(0.4, 0.8, 3.2, 6.2, 0.6)
 	fmt.Println("TASK B")
-	solveTaskB(0.4, 0.8, 4.48, 3.56, 2.78, 5.28, 3.21)
+	args := [5]float64 { 4.48, 3.56, 2.78, 5.28, 3.21 }
+	solveTaskB(0.4, 0.8, args)
 }
