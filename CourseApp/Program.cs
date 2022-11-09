@@ -7,7 +7,7 @@ namespace Informatics_2022
         static void Main()
         {
             Console.Write("Введите, ответ на какую задачу хотите получить (A или B):");
-            string? zadacha = Console.ReadLine();
+            string zadacha = Console.ReadLine();
             switch (zadacha)
             {
                 case "A":
