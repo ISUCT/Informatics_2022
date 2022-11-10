@@ -13,4 +13,5 @@ func main() {
 		var y float64 = (math.Pow(b, 3) + math.Pow(math.Sin(a*x), 2)) / (math.Acos(x*b*x) + (math.Pow(e, -x/2)))
 		fmt.Println(y)
 	}
+
 }
