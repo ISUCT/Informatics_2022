@@ -6,7 +6,7 @@ x = 0.15
 
 print('  ')
 print('Задание А:')
-print('  ') 
+print('  ')
 
 while x <= 1.37:
     print((a + (math.tan(b * x)) ** 2) / (b + (1 / math.tan(a * x)) ** 2))
