@@ -1,10 +1,15 @@
 package internal_test
 
-// func TestSumm(t *testing.T) {
-// summ := internal.Count(2, 3, 4, 5, 6)
+import (
+	"testing"
 
-// if summ != 5 {
-// 	// t.Fatalf(`Summ(2,3) = %d, want 5, error`, summ)
-// 	fmt.Println("Hello Go!")
-// }
-// }
+	"isuct.ru/informatics2022/internal"
+)
+
+func TestLog(t *testing.T) {
+	result := internal.Log(100, 10)
+
+	if result != 0.5 {
+		t.Fatalf(`Summ(10,100) = %.4f, want 0.5, error`, result)
+	}
+}
