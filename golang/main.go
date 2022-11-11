@@ -8,7 +8,7 @@ import (
 func main() {
 	fmt.Println("ZAD A")
 	var i float64 = 1.25
-	for i = 1.25; i <= 3.25; i += 0.4 {
+	for ; i <= 3.25; i += 0.4 {
 		fmt.Println(form(i))
 	}
 	fmt.Println("ZAD B")
