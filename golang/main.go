@@ -16,11 +16,11 @@ func main() {
 	fmt.Printf("-------------------------------\n")
 
 	fmt.Printf("Задача B\n")
-	Problem(a, b, 1.21)
-	Problem(a, b, 1.76)
-	Problem(a, b, 2.53)
-	Problem(a, b, 3.48)
-	Problem(a, b, 4.52)
+
+	xValues := [5]float64{1.21, 1.76, 2.53, 3.48, 4.52}
+	for _, element := range xValues {
+		Problem(a, b, element)
+	}
 }
 
 func Problem(a, b, x float64) {
