@@ -20,8 +20,8 @@ func main() {
 		var result float64 = task(a, b, element)
 		fmt.Printf("Результат вычислений = %.4f\n", result)
 	}
-
 }
+
 func task(a, b, x float64) float64 {
 	return math.Pow((a+b*x), 2.5) / (1 + math.Log(a+b*x))
 }
