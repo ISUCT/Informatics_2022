@@ -24,9 +24,8 @@
 ```
 Блок кода
 ``` 
-hhhjh
 
-<<<<<<< HEAD
+
 ```C#
  using System;
  namespace Informatics_2022{
@@ -37,8 +36,3 @@ hhhjh
     }
  }
 ```
-=======
-```python
-print("Hello world")
-```
->>>>>>> d05b59332838bea6071523befaa92447304f6144
