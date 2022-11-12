@@ -1,4 +1,3 @@
-import math
 from laba3 import lab_var_13_2, lab_var_13_1
 
 
