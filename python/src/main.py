@@ -11,7 +11,7 @@ def lab_var_22_1(a: float, x_s: float, x_e: float, step: float):
         print(y)
 
 
-def lab_var_22_2(app: [], a: float):
+def lab_var_22_2(app: list, a: float):
     for num in app:
         y = a ** (num ** 2 - 1) - math.log((num ** 2 - 1), 10) + (num ** 2 - 1) ** (1 / 3)
         print(y)
