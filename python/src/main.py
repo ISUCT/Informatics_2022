@@ -1,3 +1,5 @@
+import math
+
 def summ(a: int, b: int) -> int:
     return a + b
 
@@ -7,7 +9,6 @@ if __name__ == "__main__":
     print(summ(3, 4))
 
 # лабораторная работа на вычисление функций
-import math
 
 # задача 1
 print('Задача 1:')
