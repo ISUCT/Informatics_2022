@@ -16,7 +16,6 @@ def lab_var_13_1(a: float, b: float, x_start: float, x_end: float, step: float):
         print(y)
 
 
-def lab_var_13_2(app: list[...], a: float, b: float):
     for number in app:
         y = (a * (number ** 0.5) - b * math.log(number, 5)) / (math.log10(abs(number - 1)))
         print(y)
