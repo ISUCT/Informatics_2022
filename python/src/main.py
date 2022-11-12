@@ -2,6 +2,7 @@ import math
 
 
 def lab_var_22_1(a: float, x_s: float, x_e: float, step: float):
+    y = None
     while x_s <= x_e:
         try:
             y = a ** (x_s ** 2 - 1) - math.log((x_s ** 2 - 1), 10) + (x_s ** 2 - 1) ** (1 / 3)
