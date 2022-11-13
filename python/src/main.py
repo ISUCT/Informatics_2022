@@ -1,7 +1,6 @@
 import math
 
 
-
 def lab_var_22_1(a: float, x_s: float, x_e: float, step: float):
     y = None
     while x_s <= x_e:
