@@ -1,8 +1,5 @@
 import math
-
 i = 0
-
-
 def frange(start, stop, step):
     i = start
     while i < stop:
