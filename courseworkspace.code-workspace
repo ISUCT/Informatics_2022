@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "CourseApp"
+		},
+		{
+			"path": "CourseApp.Tests"
+		},
+		{
+            "name": "Configs (Root)",
+            "path": "."
+        },
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"ms-azuretools.vscode-docker",
+			"ms-dotnettools.csharp",
+			"ms-mssql.mssql"
+		]
+	}
+}

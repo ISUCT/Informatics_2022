@@ -2,7 +2,7 @@
 
 Вот сюда нужно будет в первой работе с гитом добавит свое ФИО
 
-## ФИО
+Белов Степан Максимович
 
 ## Работа с репозиторием
 
@@ -23,8 +23,16 @@
 
 ```
 Блок кода
-```
+``` 
 
-```python
-print("Hello world")
+
+```C#
+ using System;
+ namespace Informatics_2022{
+    class README{
+        static void Main(){
+            Console.WriteLine("Hello World");
+        }
+    }
+ }
 ```
