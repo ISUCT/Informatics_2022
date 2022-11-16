@@ -10,8 +10,9 @@ if __name__ == "__main__":
     print(summ(3, 4))
 
 # лабораторная работа на вычисление функций
-def function(x):
-    return(math.asin(x ** 2) + math.acos(x ** 3))
+def function(t):
+    return math.asin(t ** 2) + math.acos(t ** 3)
+
 
 print("Задача 1:")
 x = 0.11
