@@ -1,4 +1,3 @@
-from numpy import arange
 
 # задача A
 
@@ -8,10 +7,12 @@ def y(x):
     return y
 
 
-for x in arange(1.23, 7.23, 1.2):
+x = 1.23
+while x < 7.23:
     a = 0.8
     b = 0.4
     print(y(x))
+    x += 1.2
 
 # задача B
 xrange = [1.88, 2.26, 3.84, 4.55, -6.21]
