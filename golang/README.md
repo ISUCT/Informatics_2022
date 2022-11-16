@@ -22,7 +22,7 @@ go mod tidy
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
 ```
 
-Для запуска линтера следует выполнить следующую команду
+Для запуска линтера следует выполнить следующую команду:
 ```shell
 $(go env GOPATH)/bin/golangci-lint run -vvv --out-format tab --print-resources-usage --timeout=180s --config=.golangci.yml
 ```
