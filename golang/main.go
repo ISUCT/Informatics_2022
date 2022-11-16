@@ -27,3 +27,4 @@ func Mass(a float64, b float64, digit [5]float64) {
 	for i := 0; i < len(digit); i++ {
 		fmt.Println(lab(a, b, digit[i]))
 	}
+}
