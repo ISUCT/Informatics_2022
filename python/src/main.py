@@ -9,7 +9,6 @@ if __name__ == "__main__":
     print("Hello world")
     print(summ(3, 4))
 
-# лабораторная работа на вычисление функций
 
 def function(t):
     return math.asin(t ** 2) + math.acos(t ** 3)
