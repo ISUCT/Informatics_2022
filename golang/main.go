@@ -6,9 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello world")
-
-	fmt.Println("Num A")
+        fmt.Println("Num A")
 	numA(0.4, 0.8, 3.2, 6.2, 0.6)
 	fmt.Println("Mass")
 	digit := [5]float64{4.48, 3.56, 2.78, 5.28, 3.21}
