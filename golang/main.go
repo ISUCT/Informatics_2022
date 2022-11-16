@@ -22,6 +22,6 @@ func main() {
 func formula(x float64) float64 {
 	var a float64 = 4.1
 	var b float64 = 2.7
-	var y float64 = ((a*a*a)*(math.Cbrt(x)) - b*(math.Log10(x)/math.Log10(5))) / (math.Pow(math.Log10(x-1), 3))
+	var y float64 = (a*(math.Cbrt(x)) - b*(math.Log10(x)/math.Log10(5))) / (math.Pow(math.Log10(x-1), 3))
 	return y
 }
