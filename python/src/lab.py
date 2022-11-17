@@ -27,3 +27,4 @@ array_x = [0.2, 0.3, 0.44, 0.6, 0.56]
 for x in array_x:
     print(f"x = {x} y = {y(x)}")
     
+    
