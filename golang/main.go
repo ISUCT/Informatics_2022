@@ -11,6 +11,7 @@ func main() {
 
 	fmt.Println(taskA(a, b))
 	fmt.Println(taskB(a, b))
+	test()
 }
 
 func formula(x float64, a float64, b float64) float64 {
