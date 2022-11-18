@@ -7,11 +7,11 @@ import (
 
 func main() {
 	fmt.Println("Задание А")
-	var x float64 = 0.7
+
 	var xk float64 = 2.2
 	var a float64 = 1.2
 	var b float64 = 0.48
-	for ; x < xk; x = x + 0.3 {
+	for x := 0.7; x < xk; x = x + 0.3 {
 		var y float64 = (((math.Pow(b, 3)) + math.Pow(math.Sin(a*x), 2)) / ((math.Acos(x * b * x)) + (math.Pow(2.7183, -x/2))))
 		fmt.Println(y)
 	}
