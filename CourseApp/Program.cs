@@ -3,7 +3,7 @@
     using System;
     using CourseApp;
 
-    internal class Program : Task
+    internal class Program
     {
          private static void Main()
          {
