@@ -21,6 +21,5 @@ func main() {
 		var znamen = (math.Log(math.Abs(b - 1)))
 		var y = (chisl / znamen)
 		fmt.Println(y)
-
 	}
 }
