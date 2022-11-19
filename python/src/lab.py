@@ -5,8 +5,8 @@ b = 0.5
 
 
 def y(x):
-    return (a + (math.tan(b * x)) ** 2) / (b + (1/math.tan(a * x)) ** 2)
-
+    y=(a + (math.tan(b * x)) ** 2) / (b + (1/math.tan(a * x)) ** 2)
+    return y
 
 #  task №17 A
 print("task №17 A")
