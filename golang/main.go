@@ -10,15 +10,22 @@ func function(a, x float64) float64 {
 	return y
 }
 
-func main() {
-	var a = 1.6
+func zadacha1(a float64) float64 {
 	fmt.Println("Задание А")
 	for x := 1.2; x <= 3.7; x += 0.5 {
 		fmt.Println("x = ", x, " ", "y = ", function(a, x))
 	}
+	return (1)
+}
+func zadacha2(a float64) float64 {
 	var znach = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
 	fmt.Println("Задание B")
 	for _, x1 := range znach {
 		fmt.Println("x = ", x1, " ", "y = ", function(a, x1))
 	}
+	return (1)
+}
+func main() {
+	var a = 1.6
+	fmt.Println(zadacha1(a), zadacha2(a))
 }
