@@ -29,5 +29,4 @@ func TaskB(a float64, b float64) [5]float64 {
 	fmt.Println("Задание В")
 	var Massiv = [5]float64{formula(0.1, a, b), formula(0.3, a, b), formula(0.4, a, b), formula(0.45, a, b), formula(0.65, a, b)}
 	return Massiv
-
 }
