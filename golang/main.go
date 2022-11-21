@@ -6,19 +6,26 @@ import (
 )
 
 func main() {
-	fmt.Println("ZAD A")
-	var i float64 = 1.25
-	for ; i <= 3.25; i += 0.4 {
-		fmt.Println(form(i))
-	}
-	fmt.Println("ZAD B")
-	fmt.Println(form(1.84))
-	fmt.Println(form(2.71))
-	fmt.Println(form(3.81))
-	fmt.Println(form(4.56))
-	fmt.Println(form(5.62))
+	fmt.Println(zadA())
+	fmt.Println(zadB())
 }
 
+func zadA() [6]float64 {
+	fmt.Println("ZAD A")
+	var i float64 = 1.25
+	var massivA [6]float64
+	var count int = 0
+	for ; i <= 3.25; i += 0.4 {
+		massivA[count] = form(i)
+		count += 1
+	}
+	return massivA
+}
+func zadB() [5]float64 {
+	fmt.Println("ZAD B")
+	var massivB = [5]float64{form(1.84), form(2.71), form(3.81), form(4.56), form(5.62)}
+	return massivB
+}
 func form(x float64) float64 {
 	return (math.Sqrt(math.Sqrt(math.Abs(x*x-2.5))) + math.Cbrt(math.Log10(x*x)))
 }
