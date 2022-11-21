@@ -8,8 +8,8 @@ import (
 func main() {
 	const a float64 = 2.0
 	const b float64 = 1.1
-	taskb(a, b)
-	fmt.Println(taskb(a, b))
+	task1(a, b)
+	fmt.Println(task2(a, b))
 }
 
 func formula(x float64, a float64, b float64) float64 {
@@ -17,7 +17,7 @@ func formula(x float64, a float64, b float64) float64 {
 	return y
 }
 
-func taska(a float64, b float64) {
+func task1(a float64, b float64) {
 	fmt.Println("Задание А")
 	var x float64 = 0.08
 	for ; x < 1.08; x = x + 0.2 {
@@ -25,7 +25,7 @@ func taska(a float64, b float64) {
 	}
 }
 
-func taskb(a float64, b float64) [5]float64 {
+func task2(a float64, b float64) [5]float64 {
 	fmt.Println("Задание В")
 	var Massiv = [5]float64{formula(0.1, a, b), formula(0.3, a, b), formula(0.4, a, b), formula(0.45, a, b), formula(0.65, a, b)}
 	return Massiv
