@@ -6,22 +6,28 @@ import (
 )
 
 func main() {
-	fmt.Println("Задание А")
-	var i float64 = 0.08
-	for ; i < 1.08; i = i + 0.2 {
-		fmt.Println(formula(i))
-	}
-	fmt.Println("Задание В")
-	fmt.Println(formula(0.1))
-	fmt.Println(formula(0.3))
-	fmt.Println(formula(0.4))
-	fmt.Println(formula(0.45))
-	fmt.Println(formula(0.65))
+	const a float64 = 2.0
+	const b float64 = 1.1
+	TaskA(a, b)
+	fmt.Println(TaskB(a, b))
 }
 
-func formula(x float64) float64 {
-	var a float64 = 2.0
-	var b float64 = 1.1
+func formula(x float64, a float64, b float64) float64 {
 	var y float64 = (math.Log10(math.Abs(b*b-x*x)) / math.Log10(a)) / math.Pow(math.Abs(x*x-a*a), 0.2)
 	return y
+}
+
+func TaskA(a float64, b float64) {
+	fmt.Println("Задание А")
+	var x float64 = 0.08
+	for ; x < 1.08; x = x + 0.2 {
+		fmt.Println(formula(x, a, b))
+	}
+}
+
+func TaskB(a float64, b float64) [5]float64 {
+	fmt.Println("Задание В")
+	var Massiv = [5]float64{formula(0.1, a, b), formula(0.3, a, b), formula(0.4, a, b), formula(0.45, a, b), formula(0.65, a, b)}
+	return Massiv
+
 }
