@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
 
 def Aformula(x: float = 2.1, a: float = 1.35, b: float = 0.98):
-    list_reply = []
+    list_reply: list = []
     if 1.14 > x or x > 4.24:
         list_reply.append(None)
     while 1.14 <= x <= 4.24:
@@ -22,7 +22,7 @@ def Aformula(x: float = 2.1, a: float = 1.35, b: float = 0.98):
 
 
 def Bformula(variables=[0.35, 1.28, 3.51, 5.21, 4.16], a=1.35, b=0.98):
-    list_reply = []
+    list_reply: list = []
     for i in range(len(variables)):
         x = variables[i]
         if x != 1 and x > 0:
