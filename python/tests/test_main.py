@@ -2,35 +2,34 @@ import unittest
 from src import main
 
 
-class SummTests(unittest.TestCase):
+class FormulaCalculationTestCase(unittest.TestCase):
 
-    def test_positive(self):
-        res = main.summ(2, 3)
-        self.assertEqual(5, res)
+    def test_x_two(self):
+        result = main.lb3_main(1, 1, values_list=[2])
+        sub = [i for i in result if "Inc" in i]
+        self.assertEqual(len(sub), True)
 
-    def test_zero(self):
-        res = main.summ(0, 0)
-        self.assertEqual(0, res)
+    def test_x_negative(self):
+        result = main.lb3_main(1, 1, values_list=[-1])
+        sub = [i for i in result if "Inc" in i]
+        self.assertEqual(len(sub), True)
 
-    def test_one_negative(self):
-        res = main.summ(-2, 3)
-        self.assertEqual(1, res)
+    def test_x_zero(self):
+        result = main.lb3_main(1, 1, values_list=[0])
+        sub = [i for i in result if "Inc" in i]
+        self.assertEqual(len(sub), True)
 
-    def test_both_negative(self):
-        res = main.summ(-2, -4)
-        self.assertEqual(-6, res)
+    def test_step_more_end(self):
+        result = main.lb3_main(1, 1, x_start=1, x_end=2, x_step=3)
+        self.assertEqual(len(result), 1)
 
-    def test_one_negative_zero_res(self):
-        res = main.summ(-2, 2)
-        self.assertEqual(0, res)
+    def test_start_step_end_zero(self):
+        result = main.lb3_main(1, 1, x_start=0, x_end=0, x_step=0)
+        self.assertEqual(result, "Optional parameters are missing")
 
-    def test_one_negative_and_text(self):
-        try:
-            main.summ(-2, "2")
-        except:
-            self.assertTrue(True)
-            return
-        self.fail()
+    def test_no_x(self):
+        result = main.lb3_main(1, 1)
+        self.assertEqual(result, "Optional parameters are missing")
 
 
 if __name__ == '__main__':
