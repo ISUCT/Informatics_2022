@@ -32,13 +32,12 @@ func monkeyCount(n int) []int {
 }
 
 func PaperWork(n1 int, m int) int {
-	var papers = 0
 	if n1 > 0 && m > 0 {
-		papers = n1 * m
+		return (n1 * m)
 	} else {
 		return 0
 	}
-	return papers
+
 }
 
 func Hero(bullets, dragons int) bool {
