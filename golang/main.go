@@ -12,6 +12,13 @@ func main() {
 	fmt.Println(taskA(a, b))
 	fmt.Println(taskB(a, b))
 	test()
+
+	fmt.Println("Задания с Codewars")
+	fmt.Println(evenOrOdd(16))
+	fmt.Println(countingSheep([]bool{true, false, true, true, true}))
+	fmt.Println(monkeysCount(19))
+	fmt.Println(paperworkCount(23, 2))
+	fmt.Println(heroWithGunShootsDragons(37, 20))
 }
 
 func formula(x float64, a float64, b float64) float64 {
@@ -20,7 +27,6 @@ func formula(x float64, a float64, b float64) float64 {
 }
 
 func taskA(a float64, b float64) []float64 {
-	fmt.Println("Задание А")
 	var i float64 = 1.5
 	var res []float64
 	for ; i < 3.5; i = i + 0.4 {
@@ -29,7 +35,6 @@ func taskA(a float64, b float64) []float64 {
 	return res
 }
 func taskB(a float64, b float64) []float64 {
-	fmt.Println("Задание B")
 	var x []float64 = []float64{1.9, 2.15, 2.34, 2.74, 3.16}
 	var res []float64
 	var i int8
