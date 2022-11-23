@@ -37,7 +37,6 @@ func PaperWork(n1 int, m int) int {
 	} else {
 		return 0
 	}
-
 }
 
 func Hero(bullets, dragons int) bool {
