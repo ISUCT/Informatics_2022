@@ -1,32 +1,44 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
-
-func EvaluateFunction(a, b, x float64) float64 {
-	var functionValue float64 = ((math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a / b))) * math.Pow(a*b, 1.0/3.0)
-	return functionValue
+func EvenOrOdd(number int) string {
+	if number%2 == 0 {
+		return "Even"
+	} else {
+		return "Odd"
+	}
 }
 
-func printFunctionValue(x, functionValue float64) {
-	fmt.Printf("f(%.3g) = %.13g\n", x, functionValue)
+func CountSheeps(numbers []bool) int {
+	count := 0
+	for _, elem := range numbers {
+		if elem {
+			count += 1
+		}
+	}
+	return count
+}
+
+// Поменяла monkeyCount на MonkeyCount, так как иначе линтер ругался на неиспользованную функцию
+func MonkeyCount(n int) []int {
+	counting := make([]int, 0, n)
+	for i := 1; i <= n; i += 1 {
+		counting = append(counting, i)
+	}
+	return counting
+}
+
+// Это задание нельзя было выполнить на Go на Codewars, поэтому написала для него тесты в main_test.go
+func PaperWork(n, m int) int {
+	if n < 0 || m < 0 {
+		return 0
+	} else {
+		return n * m
+	}
+}
+
+func Hero(bullets, dragons int) bool {
+	return dragons*2 <= bullets
 }
 
 func main() {
-	fmt.Printf("=======\nЗадача A\n=======\n")
-	a, b := 0.4, 0.8
-	startValueForX := 3.2
-	endValueForX := 6.2
-	step := 0.6
-	for x := startValueForX; x <= endValueForX; x += step {
-		printFunctionValue(x, EvaluateFunction(a, b, x))
-	}
-
-	fmt.Printf("=======\nЗадача B\n=======\n")
-	variableValues := [5]float64{4.48, 3.56, 2.78, 5.28, 3.21}
-	for _, x := range variableValues {
-		printFunctionValue(x, EvaluateFunction(a, b, x))
-	}
 }
