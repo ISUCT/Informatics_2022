@@ -12,10 +12,10 @@ func EvenOrOdd(number int) string {
 	}
 }
 
-func CountSheeps(numbers []bool) int {
+func CountSheeps(numbers []string) int {
 	var count = 0
 	for _, value := range numbers {
-		if value == true {
+		if value == "true" {
 			count = count + 1
 		}
 	}
@@ -50,7 +50,7 @@ func Hero(bullets, dragons int) bool {
 func main() {
 	var number = 4
 	fmt.Println(EvenOrOdd(number))
-	numbers := [5]bool{true, true, false, true, true}
+	numbers := [5]string{"true", "true", "false", "true", "true"}
 	fmt.Println(CountSheeps(numbers[:]))
 	var n = 5
 	fmt.Println(monkeyCount(n))
