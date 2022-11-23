@@ -2,30 +2,64 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func function(a, x float64) float64 {
-	var y float64 = math.Pow(a, (math.Pow(x, 2)-1)) - math.Log10(math.Pow(x, 2)-1) + math.Pow((math.Pow(x, 2)-1), (1.0/3.0))
-	return y
+func EvenOrOdd(number int) string {
+	if number%2 == 0 {
+		return "Even"
+	} else {
+		return "Odd"
+	}
 }
 
-func zadacha1(a float64) float64 {
-	fmt.Println("Задание А")
-	for x := 1.2; x <= 3.7; x += 0.5 {
-		fmt.Println("x = ", x, " ", "y = ", function(a, x))
+func CountSheeps(numbers []bool) int {
+	var count = 0
+	for _, value := range numbers {
+		if value == true {
+			count = count + 1
+		}
 	}
-	return (1)
+	return count
 }
-func zadacha2(a float64) float64 {
-	var znach = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
-	fmt.Println("Задание B")
-	for _, x1 := range znach {
-		fmt.Println("x = ", x1, " ", "y = ", function(a, x1))
+
+func monkeyCount(n int) []int {
+	var monkey []int
+	monkeySlice := monkey[:]
+	for i := 1; i <= n; i++ {
+		monkeySlice = append(monkeySlice, i)
 	}
-	return (1)
+	return monkeySlice
 }
+
+func PaperWork(n1 int, m int) int {
+	var papers = 0
+	if n1 > 0 && m > 0 {
+		papers = n1 * m
+	} else {
+		return 0
+	}
+	return papers
+}
+
+func Hero(bullets, dragons int) bool {
+	if bullets >= (dragons * 2) {
+		return true
+	} else {
+		return false
+	}
+}
+
 func main() {
-	var a = 1.6
-	fmt.Println(zadacha1(a), zadacha2(a))
+	var number = 4
+	fmt.Println(EvenOrOdd(number))
+	numbers := [5]bool{true, true, false, true, true}
+	fmt.Println(CountSheeps(numbers[:]))
+	var n = 5
+	fmt.Println(monkeyCount(n))
+	var n1 = 5
+	var m = 4
+	fmt.Println(PaperWork(n1, m))
+	var bullets = 5
+	var dragons = 4
+	fmt.Println(Hero(bullets, dragons))
 }
