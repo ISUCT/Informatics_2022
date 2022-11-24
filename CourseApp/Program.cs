@@ -14,7 +14,7 @@
 
             Console.WriteLine("B:");
 
-            double[] x_massB = new double[] { 1.1, 2.4, 3.6, 1.7, 3.9f };
+            double[] x_massB = new double[] { 1.1, 2.4, 3.6, 1.7, 3.9 };
             foreach (double x in x_massB)
             {
                 Console.WriteLine(Task.Alg(x));
