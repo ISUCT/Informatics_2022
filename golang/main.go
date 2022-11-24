@@ -48,6 +48,10 @@ func Hero(bullets, dragons int) bool {
 }
 
 func main() {
+	fmt.Println("Лабораторная работа 1")
+	var a = 1.6
+	fmt.Println(zadacha1(a), zadacha2(a))
+	fmt.Println("Задачи codewars")
 	var number = 4
 	fmt.Println(EvenOrOdd(number))
 	numbers := [5]string{"true", "true", "false", "true", "true"}
