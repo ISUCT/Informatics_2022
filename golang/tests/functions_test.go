@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"myProject/internal"
+	"isuct.ru/informatics2022/internal"
 )
 
 func TestEvaluateFunctionTableDriven(t *testing.T) {
