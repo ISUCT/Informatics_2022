@@ -1,3 +1,3 @@
-module isuct.ru/informatics2022
+module myProject
 
 go 1.16

@@ -1,8 +1,10 @@
-package main
+package internal_test
 
 import (
 	"fmt"
 	"testing"
+
+	"myProject/internal"
 )
 
 func TestEvaluateFunctionTableDriven(t *testing.T) {
@@ -24,12 +26,9 @@ func TestEvaluateFunctionTableDriven(t *testing.T) {
 	}
 
 	for _, testInput := range tests {
-		testName := fmt.Sprintf("a = %g, b = %g, x = %g", testInput.a, testInput.b, testInput.x)
-		t.Run(testName, func(t *testing.T) {
-			result := fmt.Sprintf("%.6f", EvaluateFunction(testInput.a, testInput.b, testInput.x))
-			if result != testInput.want {
-				t.Errorf("got %s, want %s", result, testInput.want)
-			}
-		})
+		result := fmt.Sprintf("%.6f", internal.EvaluateFunction(testInput.a, testInput.b, testInput.x))
+		if result != testInput.want {
+			t.Errorf("got %s, want %s", result, testInput.want)
+		}
 	}
 }
