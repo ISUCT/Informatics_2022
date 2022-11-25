@@ -4,31 +4,52 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"isuct.ru/informatics2022/internal"
 )
 
-func TestEvaluateFunctionTableDriven(t *testing.T) {
-	var tests = []struct {
-		a, b, x float64
-		want    string
-	}{
-		{0.4, 0.8, 3.2, "0.991503"},
-		{0.4, 0.8, 3.8, "0.903289"},
-		{0.4, 0.8, 4.4, "0.810890"},
-		{0.4, 0.8, 5.0, "0.721277"},
-		{0.4, 0.8, 5.6, "0.637818"},
-		{0.4, 0.8, 6.2, "0.561889"},
-		{0.4, 0.8, 4.48, "0.798680"},
-		{0.4, 0.8, 3.56, "0.939642"},
-		{0.4, 0.8, 2.78, "1.043989"},
-		{0.4, 0.8, 5.28, "0.681446"},
-		{0.4, 0.8, 3.21, "0.990128"},
+func TestEvaluateFunction(t *testing.T) {
+	assert := assert.New(t)
+
+	var a, b float64 = 0.4, 0.8
+	var x float64 = 3.2
+	var want string = "0.991503"
+	functionValue, err := internal.EvaluateFunction(a, b, x)
+	assert.Equal(want, fmt.Sprintf("%.6f", functionValue), "Want and got should be equal.")
+
+	a, b = 0.0, 0.0
+	x = 0.0
+	functionValue, err = internal.EvaluateFunction(a, b, x)
+	if assert.Error(err) {
+		assert.Equal(fmt.Errorf("Not a Number"), err, "Should return Not a Number.")
 	}
 
-	for _, testInput := range tests {
-		result := fmt.Sprintf("%.6f", internal.EvaluateFunction(testInput.a, testInput.b, testInput.x))
-		if result != testInput.want {
-			t.Errorf("got %s, want %s", result, testInput.want)
-		}
+	a, b = -1.0, -5.0
+	x = -3.5
+	functionValue, err = internal.EvaluateFunction(a, b, x)
+	// Pow(x, y) = NaN for finite x < 0 and finite non-integer y
+	if assert.Error(err) {
+		assert.Equal(fmt.Errorf("Not a Number"), err, "Should return Not a Number.")
 	}
+}
+
+func TestSolveTaskA(t *testing.T) {
+	assert := assert.New(t)
+
+	var a, b float64 = 0.4, 0.8
+	var want int = 6
+	var got int = len(internal.SolveTaskA(a, b))
+
+	assert.Equal(want, got, "Want and got should be equal.")
+}
+
+func TestSolveTaskB(t *testing.T) {
+	assert := assert.New(t)
+
+	var a, b float64 = 0.4, 0.8
+	var want int = 5
+	var got int = len(internal.SolveTaskB(a, b))
+
+	assert.Equal(want, got, "Want and got should be equal.")
 }
