@@ -1,38 +1,47 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
-
-func equation(x float64) float64 {
-	var a float64 = 0.8
-	var b float64 = 0.4
-	return (math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9)
-}
-
-func main() {
-	fmt.Println("Part A")
-	var x float64 = 1.23
-	for x <= 7.23 {
-		fmt.Println(equation(x))
-		x = x + 1.2
+func EvenOrOdd(number int) string {
+	if number%2 == 0 {
+		return "Even"
+	}
+	if number%2 != 0 {
+		return "Odd"
 	}
 
-	fmt.Println("Part B")
+	return " "
+}
 
-	x = 1.88
-	fmt.Println(equation(x))
+func CountSheeps(numbers []bool) int {
+	var sum int = 0
 
-	x = 2.26
-	fmt.Println(equation(x))
+	for i := 0; i < len(numbers); i++ {
+		if numbers[i] {
+			sum = sum + 1
+		}
+	}
+	return sum
+}
 
-	x = 3.84
-	fmt.Println(equation(x))
+func MonkeyCount(n int) []int {
+	count := make([]int, 0, n)
+	for i := 1; i <= n; i++ {
+		count = append(count, i)
+	}
+	return count
+}
 
-	x = 4.55
-	fmt.Println(equation(x))
+func Paperwork(n, m int) int {
+	if n == 0 || m == 0 {
+		return 0
+	} else {
+		return n * m
+	}
+}
 
-	x = -6.21
-	fmt.Println(equation(x))
+func Hero(bullets, dragons int) bool {
+	if dragons <= bullets/2 {
+		return true
+	} else {
+		return false
+	}
 }
