@@ -20,16 +20,12 @@ class FormulaCalculationTestCase(unittest.TestCase):
         self.assertEqual(len(sub), True)
 
     def test_step_more_end(self):
-        result = main.lb3_main(1, 1, x_start=1, x_end=2, x_step=3)
+        result = main.lb3_main(1, 1, values_list=[1, 2, 3], gap=True)
         self.assertEqual(len(result), 1)
 
     def test_start_step_end_zero(self):
-        result = main.lb3_main(1, 1, x_start=0, x_end=0, x_step=0)
-        self.assertEqual(result, "Optional parameters are missing")
-
-    def test_no_x(self):
-        result = main.lb3_main(1, 1)
-        self.assertEqual(result, "Optional parameters are missing")
+        result = main.lb3_main(1, 1, values_list=[0, 0, 0], gap=True)
+        self.assertEqual(result, ['Incorrect value when x = 0'])
 
 
 if __name__ == '__main__':

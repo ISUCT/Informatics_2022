@@ -12,7 +12,9 @@ def monkey_count(n: int):
 
 
 def paperwork(n, m):
-    return n * m if n > 0 and m > 0 else 0
+    if n > 0 and m > 0:
+        return n * m
+    return 0
 
 
 def hero(bullets, dragons):
