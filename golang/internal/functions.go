@@ -23,7 +23,7 @@ func PrintFunctionValue(functionValue *[]float64) {
 
 func SolveTaskA(a, b, startValueForX, endValueForX, step float64) ([]float64, error) {
 	if endValueForX < startValueForX {
-		return nil, errors.New("EndValue is less than StartValue")
+		return nil, errors.New("endValueForX is less than startValueForX")
 	}
 	if (endValueForX > startValueForX) && step < 0 {
 		return nil, errors.New("Infinite cycle")
@@ -31,7 +31,7 @@ func SolveTaskA(a, b, startValueForX, endValueForX, step float64) ([]float64, er
 
 	size := math.Floor(math.Abs((endValueForX-startValueForX)/step)) + 1 // количество членов арифметической прогрессии
 	if size <= 0 {
-		log.Fatal("Size is less than 0")
+		log.Fatal("Size is less or equal to zero")
 	}
 	sliceOfResults := make([]float64, 0, int(size))
 
@@ -46,7 +46,10 @@ func SolveTaskB(a, b float64, size int, variableValues *[]float64) []float64 {
 	sliceOfResults := make([]float64, 0, size)
 
 	for i := 0; i < size; i++ {
-		functionValue, _ := EvaluateFunction(a, b, (*variableValues)[i])
+		functionValue, err := EvaluateFunction(a, b, (*variableValues)[i])
+		if err != nil {
+			log.Fatal(err.Error())
+		}
 		sliceOfResults = append(sliceOfResults, functionValue)
 	}
 	return sliceOfResults
