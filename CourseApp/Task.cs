@@ -27,7 +27,7 @@
             List<double> doubles = new List<double>();
             for (double x = startx; x <= finx; x += deltx)
             {
-                doubles.Add(Alg(startx));
+                doubles.Add(Alg(x));
             }
 
             return doubles;

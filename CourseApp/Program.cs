@@ -7,10 +7,19 @@
          private static void Main()
          {
             Console.WriteLine("A:");
-            Console.WriteLine(Task.TaskA(1.28, 3.28, 0.4));
+            var t = Task.TaskA(1.28, 3.28, 0.4);
+            foreach (double x in t)
+            {
+                Console.WriteLine(x);
+            }
 
             Console.WriteLine("B:");
-            Console.WriteLine(Task.TaskB(new double[] { 1.1, 2.4, 3.6, 1.7, 3.9 }));
+
+            var m = Task.TaskB(new double[] { 1.1, 2.4, 3.6, 1.7, 3.9 });
+            foreach (double x in m)
+            {
+                Console.WriteLine(x);
+            }
 
             Console.ReadLine();
          }
