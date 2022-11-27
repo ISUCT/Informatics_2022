@@ -5,22 +5,27 @@ def summ(a: int, b: int) -> int:
     return a + b
 
 
-if __name__ == "__main__":
-    print("Hello world")
-    print(summ(3, 4))
-
-
-def function(t):
+def function1(t):
     return math.asin(t ** 2) + math.acos(t ** 3)
 
 
-print("Задача 1:")
-x = 0.11
-while x <= 0.36:
-    print(function(x))
-    x += 0.05
+def task1(xst, xend, xstep):
+    answer = []
+    while xst <= xend:
+        answer.append(function1(xst))
+        xst += xstep
+    return(answer)
 
-print("Задача 2:")
-x1 = [0.08, 0.26, 0.35, 0.41, 0.53]
-for n in x1:
-    print(function(n))
+
+def task2(xlist):
+    answer = []
+    for n in xlist:
+        answer.append(function1(n))
+    return answer
+
+
+if __name__ == "__main__":
+    print("Hello world")
+    print(summ(3, 4))
+    print(task1(0.11, 0.36, 0.05))
+    print(task2([0.08, 0.26, 0.35, 0.41, 0.53]))
