@@ -11,6 +11,8 @@ def count_sheeps(sheep):
 
 
 monkey = int()
+
+
 def monkey_count(monkey):
     c = list()
     for i in range(1, monkey + 1):
