@@ -50,6 +50,11 @@ func TestSolveTaskA(t *testing.T) {
 	got := len(slice)
 	assert.Equal(testValues.want, got, "A length of the resulting array should be equal to 6.")
 
+	testValues = testsTaskA{a: 0.4, b: 0.8, startValueForX: 3.2, endValueForX: 6.2, step: 1.2, want: 3}
+	slice, err = internal.SolveTaskA(testValues.a, testValues.b, testValues.startValueForX, testValues.endValueForX, testValues.step)
+	got = len(slice)
+	assert.Equal(testValues.want, got, "A length of the resulting array should be equal to 3.")
+
 	testValues = testsTaskA{a: 0.4, b: 0.8, startValueForX: 6.2, endValueForX: 3.2, step: 0.6}
 	slice, err = internal.SolveTaskA(testValues.a, testValues.b, testValues.startValueForX, testValues.endValueForX, testValues.step)
 	if assert.Error(err) {
