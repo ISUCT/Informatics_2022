@@ -6,7 +6,7 @@ namespace CourseApp.Tests
     public class DemoTest
     {
         [Fact]
-        public void Test1()
+        private void Test1()
         {
             {
                 var t = Task.Znamen(1.1);
@@ -15,7 +15,7 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void Test2()
+        private void Test2()
         {
             {
                 var t = Task.Znamen(2.4);
@@ -24,24 +24,31 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void Test3()
+        private void Test3()
         {
             var t = Task.Znamen(3.6);
             Assert.NotEqual(0, t);
         }
 
         [Fact]
-        public void Test4()
+        private void Test4()
         {
             var t = Task.Znamen(1.7);
             Assert.NotEqual(0, t);
         }
 
         [Fact]
-        public void Test5()
+        private void Test5()
         {
             var t = Task.Znamen(3.9);
             Assert.NotEqual(0, t);
+        }
+
+        [Fact]
+        private void Test6()
+        {
+            var t = Task.TaskA(1.28, 3.28, 0.4);
+            Assert.Equal(6, t.Count);
         }
     }
 }

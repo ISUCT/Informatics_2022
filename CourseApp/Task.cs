@@ -1,6 +1,7 @@
 ﻿namespace CourceApp
 {
     using System;
+    using System.Collections.Generic;
 
     public class Task
     {
@@ -10,7 +11,6 @@
             double x_cube = Math.Pow(x, 3);
             double verx = Math.Pow(Math.Sin(b_cube + x_cube), 2);
             double niz = Znamen(x);
-            Console.WriteLine(verx / niz);
             return verx / niz;
         }
 
@@ -20,6 +20,28 @@
             double xCube = Math.Pow(x, 3);
             var znamen = Math.Pow(bCube / xCube, 1 / 3);
             return znamen;
+        }
+
+        public static List<double> TaskA(double startx, double finx, double deltx)
+        {
+            List<double> doubles = new List<double>();
+            for (double x = startx; x <= finx; x += deltx)
+            {
+                doubles.Add(Alg(startx));
+            }
+
+            return doubles;
+        }
+
+        public static List<double> TaskB(double[] mass)
+        {
+            List<double> doubles = new List<double>();
+            foreach (double x in mass)
+            {
+                doubles.Add(Alg(x));
+            }
+
+            return doubles;
         }
     }
 }
