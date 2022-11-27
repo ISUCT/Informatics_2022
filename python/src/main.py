@@ -14,7 +14,7 @@ def task1(xst, xend, xstep):
     while xst <= xend:
         answer.append(function1(xst))
         xst += xstep
-    return(answer)
+    return answer
 
 
 def task2(xlist):
