@@ -11,8 +11,8 @@ func main() {
 	fmt.Printf("=======\nЗадача A\n=======\n")
 	var a, b float64
 	var startValueForX, endValueForX, step float64
-	fmt.Println("Task A: please, input a, b, start value for x, end value for x and step for x") // Указатели сделаны, чтобы передавать в функции слайс
-	_, err := fmt.Scan(&a, &b, &startValueForX, &endValueForX, &step)                            // напрямую, а не делать каждый раз его копию
+	fmt.Println("Task A: please, input a, b, start value for x, end value for x and step for x")
+	_, err := fmt.Scan(&a, &b, &startValueForX, &endValueForX, &step)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,7 +21,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	internal.PrintFunctionValue(&answerTaskA)
+	internal.PrintFunctionValue(answerTaskA)
 
 	fmt.Printf("=======\nЗадача B\n=======\n")
 	fmt.Println("Task B: please, enter a, b, quantity of values of x and enter values for x themselves")
@@ -42,6 +42,6 @@ func main() {
 		variableValues = append(variableValues, variableX)
 	}
 
-	answerTaskB := internal.SolveTaskB(a, b, size, &variableValues)
-	internal.PrintFunctionValue(&answerTaskB)
+	answerTaskB := internal.SolveTaskB(a, b, size, variableValues)
+	internal.PrintFunctionValue(answerTaskB)
 }
