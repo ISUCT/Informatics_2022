@@ -1,30 +1,30 @@
 package main
 
-func evenOrOdd(x int) string {
-	if x%2 == 0 {
+func evenOrOdd(num int) string {
+	if num%2 == 0 {
 		return "Even"
 	} else {
 		return "Odd"
 	}
 }
 
-func countingSheep(x []bool) int {
-	var r int
+func countingSheep(arr []bool) int {
+	var res int
 	var i int
-	for ; i < len(x); i++ {
-		if x[i] && (x[i] || !x[i]) {
-			r++
+	for ; i < len(arr); i++ {
+		if arr[i] && (arr[i] || !arr[i]) {
+			res++
 		}
 	}
-	return r
+	return res
 }
 
 func monkeysCount(num int) []int {
-	var r []int
+	var res []int
 	for n := 1; n <= num; n++ {
-		r = append(r, n)
+		res = append(res, n)
 	}
-	return r
+	return res
 }
 
 func paperworkCount(n int, m int) int {

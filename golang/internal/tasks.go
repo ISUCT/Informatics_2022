@@ -1,4 +1,4 @@
-package main
+package internal
 
 import "math"
 
@@ -7,7 +7,7 @@ func formula(x float64, a float64, b float64) float64 {
 	return y
 }
 
-func taskA(a float64, b float64) []float64 {
+func TaskA(a float64, b float64) []float64 {
 	var i float64 = 1.5
 	var res []float64
 	for ; i < 3.5; i = i + 0.4 {
@@ -15,7 +15,7 @@ func taskA(a float64, b float64) []float64 {
 	}
 	return res
 }
-func taskB(a float64, b float64) []float64 {
+func TaskB(a float64, b float64) []float64 {
 	var x []float64 = []float64{1.9, 2.15, 2.34, 2.74, 3.16}
 	var res []float64
 	var i int8
