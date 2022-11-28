@@ -14,11 +14,11 @@ func main() {
 	fmt.Println(internal.TaskB(a, b))
 
 	fmt.Println("Задания с Codewars")
-	fmt.Println(evenOrOdd(16))
-	fmt.Println(countingSheep([]bool{true, false, true, true, true}))
-	fmt.Println(monkeysCount(19))
-	fmt.Println(paperworkCount(23, 2))
-	fmt.Println(heroWithGunShootsDragons(37, 20))
+	fmt.Println(internal.EvenOrOdd(16))
+	fmt.Println(internal.CountingSheep([]bool{true, false, true, true, true}))
+	fmt.Println(internal.MonkeysCount(19))
+	fmt.Println(internal.PaperworkCount(23, 2))
+	fmt.Println(internal.HeroWithGunShootsDragons(37, 20))
 
-	gameOfLife(1, 5, 5)
+	//internal.GameOfLife(1, 5, 5)
 }

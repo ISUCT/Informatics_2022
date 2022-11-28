@@ -1,6 +1,6 @@
-package main
+package internal
 
-func evenOrOdd(num int) string {
+func EvenOrOdd(num int) string {
 	if num%2 == 0 {
 		return "Even"
 	} else {
@@ -8,7 +8,7 @@ func evenOrOdd(num int) string {
 	}
 }
 
-func countingSheep(arr []bool) int {
+func CountingSheep(arr []bool) int {
 	var res int
 	var i int
 	for ; i < len(arr); i++ {
@@ -19,7 +19,7 @@ func countingSheep(arr []bool) int {
 	return res
 }
 
-func monkeysCount(num int) []int {
+func MonkeysCount(num int) []int {
 	var res []int
 	for n := 1; n <= num; n++ {
 		res = append(res, n)
@@ -27,13 +27,13 @@ func monkeysCount(num int) []int {
 	return res
 }
 
-func paperworkCount(n int, m int) int {
+func PaperworkCount(n int, m int) int {
 	if n < 0 || m < 0 {
 		return 0
 	}
 	return n * m
 }
 
-func heroWithGunShootsDragons(ammo int, dragons int) bool {
+func HeroWithGunShootsDragons(ammo int, dragons int) bool {
 	return ammo/2 >= dragons
 }
