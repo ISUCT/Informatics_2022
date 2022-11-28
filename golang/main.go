@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("Задачи codewars")
 	var number = 4
 	fmt.Println(EvenOrOdd(number))
-	numbers := [5]string{"true", "true", "false", "true", "true"}
+	numbers := [5]bool{true, true, false, true, true}
 	fmt.Println(CountSheeps(numbers[:]))
 	var n = 5
 	fmt.Println(monkeyCount(n))

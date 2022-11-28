@@ -8,10 +8,10 @@ func EvenOrOdd(number int) string {
 	}
 }
 
-func CountSheeps(numbers []string) int {
+func CountSheeps(numbers []bool) int {
 	var count = 0
 	for _, value := range numbers {
-		if value == "true" {
+		if value {
 			count = count + 1
 		}
 	}
