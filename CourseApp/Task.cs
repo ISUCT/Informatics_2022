@@ -25,7 +25,7 @@
         public static List<double> TaskA(double startx, double finx, double deltx)
         {
             List<double> doubles = new List<double>();
-            for (double x = startx; x <= finx; x += deltx)
+            for (double x = startx; x <= finx; x += deltax)
             {
                 doubles.Add(Alg(x));
             }
