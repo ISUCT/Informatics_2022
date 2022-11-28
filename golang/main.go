@@ -13,7 +13,7 @@ func main() {
 func zadA() []float64 {
 	fmt.Println("ZAD A")
 	var i float64 = 1.25
-	var massivA []float64
+	var massivA = make([]float64, 6)
 	var count int = 0
 	for ; i <= 3.25; i += 0.4 {
 		massivA[count] = form(i)
