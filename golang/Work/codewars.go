@@ -9,13 +9,13 @@ func EvenOrOdd(number int) string {
 }
 
 func CountingSheep(count []bool) int {
-	k := 0
+	sheeps := 0
 	for i := 0; i < len(count); i++ {
 		if count[i] {
-			k ++
+			sheeps ++
 		}
 	}
-	return k
+	return sheeps
 }
 
 func CountTheMonkeys(n int) []int {
