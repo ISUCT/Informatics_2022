@@ -5,46 +5,47 @@ namespace CourseApp.Tests
 
     public class DemoTest
     {
+        /*
         [Fact]
-        private void Test1()
+        public void Test1()
         {
-            var t = Task.Znamen(1.1);
-            Assert.NotEqual(0, t);
+            var znamen1 = Task.GetZnamen[0];
+            Assert.NotEqual(0, znamen1);
         }
 
         [Fact]
-        private void Test2()
+        public void Test2()
         {
-            var t = Task.Znamen(2.4);
-            Assert.NotEqual(0, t);
+            var znamen2 = Task.GetZnamen[1];
+            Assert.NotEqual(0, znamen2);
         }
 
         [Fact]
-        private void Test3()
+        public void Test3()
         {
-            var t = Task.Znamen(3.6);
-            Assert.NotEqual(0, t);
+            var znamen3 = Task.GetZnamen[2];
+            Assert.NotEqual(0, znamen3);
         }
 
         [Fact]
-        private void Test4()
+        public void Test4()
         {
-            var t = Task.Znamen(1.7);
-            Assert.NotEqual(0, t);
+            var znamen4 = Task.GetZnamen[3];
+            Assert.NotEqual(0, znamen4);
         }
 
         [Fact]
-        private void Test5()
+        public void Test5()
         {
-            var t = Task.Znamen(3.9);
-            Assert.NotEqual(0, t);
+            var znamen5 = Task.GetZnamen[4];
+            Assert.NotEqual(0, znamen5);
         }
-
+        */
         [Fact]
-        private void Test6()
+        public void Test1()
         {
-            var t = Task.TaskA(1.28, 3.28, 0.4);
-            Assert.Equal(6, t.Count);
+            var taskAMass = Task.TaskA(1.28, 3.28, 0.4);
+            Assert.Equal(6, taskAMass.Count);
         }
     }
 }
