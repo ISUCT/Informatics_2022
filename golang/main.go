@@ -10,10 +10,10 @@ func main() {
 	fmt.Println(zadB())
 }
 
-func zadA() [6]float64 {
+func zadA() []float64 {
 	fmt.Println("ZAD A")
 	var i float64 = 1.25
-	var massivA [6]float64
+	var massivA []float64
 	var count int = 0
 	for ; i <= 3.25; i += 0.4 {
 		massivA[count] = form(i)
@@ -21,9 +21,9 @@ func zadA() [6]float64 {
 	}
 	return massivA
 }
-func zadB() [5]float64 {
+func zadB() []float64 {
 	fmt.Println("ZAD B")
-	var massivB = [5]float64{form(1.84), form(2.71), form(3.81), form(4.56), form(5.62)}
+	var massivB = []float64{form(1.84), form(2.71), form(3.81), form(4.56), form(5.62)}
 	return massivB
 }
 func form(x float64) float64 {
