@@ -8,19 +8,15 @@ namespace CourseApp.Tests
         [Fact]
         private void Test1()
         {
-            {
-                var t = Task.Znamen(1.1);
-                Assert.NotEqual(0, t);
-            }
+            var t = Task.Znamen(1.1);
+            Assert.NotEqual(0, t);
         }
 
         [Fact]
         private void Test2()
         {
-            {
-                var t = Task.Znamen(2.4);
-                Assert.NotEqual(0, t);
-            }
+            var t = Task.Znamen(2.4);
+            Assert.NotEqual(0, t);
         }
 
         [Fact]

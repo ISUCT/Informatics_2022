@@ -22,10 +22,10 @@
             return znamen;
         }
 
-        public static List<double> TaskA(double startx, double finx, double deltx)
+        public static List<double> TaskA(double startX, double finX, double deltaX)
         {
             List<double> doubles = new List<double>();
-            for (double x = startx; x <= finx; x += deltx)
+            for (double x = startX; x <= finX; x += deltaX)
             {
                 doubles.Add(Alg(x));
             }

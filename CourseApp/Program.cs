@@ -7,21 +7,19 @@
          private static void Main()
          {
             Console.WriteLine("A:");
-            var t = Task.TaskA(1.28, 3.28, 0.4);
-            foreach (double x in t)
+            var massA = Task.TaskA(1.28, 3.28, 0.4);
+            foreach (double answer in massA)
             {
-                Console.WriteLine(x);
+                Console.WriteLine(answer);
             }
 
             Console.WriteLine("B:");
 
-            var m = Task.TaskB(new double[] { 1.1, 2.4, 3.6, 1.7, 3.9 });
-            foreach (double x in m)
+            var massB = Task.TaskB(new double[] { 1.1, 2.4, 3.6, 1.7, 3.9 });
+            foreach (double answer in massB)
             {
-                Console.WriteLine(x);
+                Console.WriteLine(answer);
             }
-
-            Console.ReadLine();
          }
     }
 }
