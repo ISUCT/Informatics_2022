@@ -9,6 +9,8 @@ import (
 )
 
 func TestTaskA(t *testing.T) {
+	t.Parallel()
+
 	var resultsA = [6]float64{-2867.2049337558983, -879771.242424423, 60553.396028559044, 7705.642156268663, 2947.1559153687504, 1627.2100029870098}
 
 	const a float64 = 4.1
@@ -26,6 +28,8 @@ func TestTaskA(t *testing.T) {
 }
 
 func TestTaskB(t *testing.T) {
+	t.Parallel()
+
 	var resultsB = [5]float64{-879771.242424423, 392039.14018305, 43864.686778786934, 6807.290024311177, 2651.777897551827}
 
 	const a float64 = 4.1
