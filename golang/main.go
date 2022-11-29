@@ -8,24 +8,28 @@ func main() {
 	fmt.Println("Лабораторная работа 1")
 	var a = 1.6
 	fmt.Println("Задание А ")
-	fmt.Println("y = ", zadacha1(a))
+	var xn = 1.2
+	var xk = 4.2
+	var dx = 0.6
+	fmt.Println("y = ", zadacha1(a, xn, xk, dx))
 	fmt.Println("Задание В ")
-	fmt.Println("y = ", zadacha2(a))
+	var znach = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
+	fmt.Println("y = ", zadacha2(a, znach[:]))
 	fmt.Println("Задачи codewars")
-	fmt.Println("Задача 1")
+	fmt.Println("EvenOrOdd")
 	var number = 4
 	fmt.Println(EvenOrOdd(number))
-	fmt.Println("Задача 2")
+	fmt.Println("CountSheeps")
 	numbers := [5]bool{true, true, false, true, true}
 	fmt.Println(CountSheeps(numbers[:]))
-	fmt.Println("Задача 3")
+	fmt.Println("MonkeyCount")
 	var n = 5
 	fmt.Println(monkeyCount(n))
-	fmt.Println("Задача 4")
+	fmt.Println("PaperWork")
 	var n1 = 5
 	var m = 4
 	fmt.Println(PaperWork(n1, m))
-	fmt.Println("Задача 5")
+	fmt.Println("Hero")
 	var bullets = 5
 	var dragons = 4
 	fmt.Println(Hero(bullets, dragons))
