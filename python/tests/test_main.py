@@ -29,7 +29,10 @@ class FormulaCalculationTestCase(unittest.TestCase):
 
     def test_a_b_negative(self):
         result = main.lb3_gap(-1, -2, x_start=1, x_end=2, x_step=1)
-        self.assertEqual(len(result), True)
+        if len(result) > 0:
+            self.assertTrue(True)
+        else:
+            self.fail()
 
     def test_values_empty(self):
         result = main.lb3_value(1, 1, value_list=[])
