@@ -9,12 +9,19 @@ func function(a, x float64) float64 {
 	return y
 }
 
-func zadacha1(a, x float64) float64 {
-	var f float64 = function(a, x)
-	return f
+func zadacha1(a float64) []float64 {
+	var zadacha []float64
+	for x := 1.2; x < 4.2; x = x + 0.6 {
+		zadacha = append(zadacha, function(a, x))
+	}
+	return zadacha
 }
 
-func zadacha2(a, x1 float64) float64 {
-	var f1 float64 = function(a, x1)
-	return f1
+func zadacha2(a float64) []float64 {
+	var zadachaB []float64
+	var znach = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
+	for _, x1 := range znach {
+		zadachaB = append(zadachaB, function(a, x1))
+	}
+	return zadachaB
 }
