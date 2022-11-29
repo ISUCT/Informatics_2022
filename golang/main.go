@@ -6,25 +6,24 @@ import (
 )
 
 func main() {
+	var masB = []float64{1.16, 1.32, 1.47, 1.65, 1, 93}
 	const a float64 = 2.0
 	fmt.Println("___Задание А___")
 	fmt.Println(TaskA(a))
 	fmt.Println("___Задание В___")
-	fmt.Println(TaskB(a))
+	fmt.Println(TaskB(a, masB))
 }
 
 func TaskA(a float64) []float64 {
-	var x float64 = 1.2
 	var taskA []float64
-	for ; x < 4.2; x = x + 0.6 {
+	for x := 1.2; x < 4.2; x = x + 0.6 {
 		taskA = append(taskA, formula(x, a))
 	}
 	return taskA
 }
 
-func TaskB(a float64) []float64 {
+func TaskB(a float64, masB []float64) []float64 {
 	var taskB []float64
-	var masB = []float64{1.16, 1.32, 1.47, 1.65, 1, 93}
 	for i := 0; i < len(masB); i++ {
 		taskB = append(taskB, formula(masB[i], a))
 	}
