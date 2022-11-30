@@ -1,5 +1,9 @@
 package main
 
+import (
+	"strings"
+)
+
 func EvenOrOdd(number int) string {
 	if number%2 == 0 {
 		return "Even"
@@ -41,4 +45,39 @@ func Hero(bullets, dragons int) bool {
 	} else {
 		return false
 	}
+}
+
+func correctPolishLetters(TextPolish string) string {
+	replacer := strings.NewReplacer("ą", "a", "ć", "c", "ę", "e", "ł", "l", "ń", "n", "ó", "o", "ś", "s", "ź", "z", "ż", "z")
+	TextRus := replacer.Replace(TextPolish)
+	return TextRus
+}
+
+func findAll(n int, massiv []int) []int {
+	var out []int
+	for i, num := range massiv {
+		if num == n {
+			out = append(out, i)
+		}
+	}
+	return out
+}
+
+func min(x, y int64) int64 {
+	if x > y {
+		return y
+	}
+	return x
+}
+
+func sumOfMinimums(matrix [][]int) int {
+	var summa = 0
+	for i := 0; i <= len(matrix); i++ {
+		for j := 0; j <= len(matrix); j++ {
+			if matrix[i][j] >= matrix[i][j+1] {
+				summa += matrix[i][j+1]
+			}
+		}
+	}
+	return summa
 }
