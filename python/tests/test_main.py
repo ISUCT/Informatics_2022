@@ -4,10 +4,17 @@ from src import main
 
 class FormulaCalculationTestCase(unittest.TestCase):
 
-    def test_x_two(self):
-        result = main.lb3_value(1, 1, value_list=[2])
-        sub = [i for i in result if "Inc" in i]
-        self.assertEqual(len(sub), True)
+    def test_x_one(self):
+        result = main.lb3_value(1, 1, value_list=[3])
+        self.assertEqual(result[0], 3.4861795442282557)
+
+    def test_x_several(self):
+        result = main.lb3_value(1, 1, value_list=[1, 2, 3])
+        self.assertEqual(len(result), 3)
+
+    def test_x_gap_several(self):
+        result = main.lb3_gap(1, 1, x_start=1, x_end=5, x_step=1)
+        self.assertEqual(len(result), 5)
 
     def test_x_negative(self):
         result = main.lb3_value(1, 1, value_list=[-1])

@@ -8,7 +8,7 @@ def calculate_function(a: float, b: float, values_list: list) -> Union[str, list
         return "Optional params are missing"
     for value in values_list:
         try:
-            result_list.append(round(((a * (value ** 0.5) - b * math.log(value, 5)) / math.log10(abs(value - 1))), 2))
+            result_list.append(((a * (value ** 0.5) - b * math.log(value, 5)) / math.log10(abs(value - 1))))
         except:
             result_list.append(f"Incorrect value when x = {value}")
     return result_list
