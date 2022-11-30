@@ -42,11 +42,10 @@ func SolveTaskA(a, b, startValueForX, endValueForX, step float64) ([]float64, er
 	return sliceOfResults, nil
 }
 
-func SolveTaskB(a, b float64, size int, variableValues []float64) []float64 {
-	sliceOfResults := make([]float64, 0, size)
-
-	for i := 0; i < size; i++ {
-		functionValue, err := EvaluateFunction(a, b, variableValues[i])
+func SolveTaskB(a, b float64, variableValues []float64) []float64 {
+	sliceOfResults := make([]float64, 0, len(variableValues))
+	for _, elem := range variableValues {
+		functionValue, err := EvaluateFunction(a, b, elem)
 		if err != nil {
 			log.Fatal(err.Error())
 		}

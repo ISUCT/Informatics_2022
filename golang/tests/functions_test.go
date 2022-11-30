@@ -81,7 +81,7 @@ type testsTaskB struct {
 
 // Проверка на возвращаемую длину слайса, должно вернуть верную длину слайса
 func TestSolveTaskB_ReturnedLength(t *testing.T) {
-	testValues := testsTaskB{a: 0.4, b: 0.8, size: 5, valuesForX: []float64{4.48, 3.56, 2.78, 5.28, 3.21, 7.0, 10.0}, want: 5}
-	got := len(internal.SolveTaskB(testValues.a, testValues.b, testValues.size, testValues.valuesForX))
+	testValues := testsTaskB{a: 0.4, b: 0.8, valuesForX: []float64{4.48, 3.56, 2.78, 5.28, 3.21, 7.0, 10.0}, want: 7}
+	got := len(internal.SolveTaskB(testValues.a, testValues.b, testValues.valuesForX))
 	assert.Equal(t, testValues.want, got, "expected: %d, got: %d", testValues.want, got)
 }
