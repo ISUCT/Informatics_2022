@@ -3,53 +3,34 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 
 	"isuct.ru/informatics2022/internal"
 )
 
 func main() {
-	useDefaultValues := flag.Bool("d", true, "Omit this flag to use default values, overwise set this flag to false and type your own values.")
-	flag.Parse()
-
-	if *useDefaultValues {
-		fmt.Println("Task A:")
-		answerTaskA, err := internal.SolveTaskA(0.4, 0.8, 3.2, 6.2, 0.6)
-		if err != nil {
-			log.Fatal(err)
-		}
-		internal.PrintFunctionValue(answerTaskA)
-
-		fmt.Println("Task B:")
-		var variableValues = []float64{4.48, 3.56, 2.78, 5.28, 3.21}
-		answerTaskB := internal.SolveTaskB(0.4, 0.8, variableValues)
-		internal.PrintFunctionValue(answerTaskB)
-
-		return
-	}
-
-	fmt.Println("Task A: please, input a, b, start value for x, end value for x and step for x")
 	var a, b float64
 	var startValueForX, endValueForX, step float64
-	fmt.Println("Task A: please, input a, b, start value for x, end value for x and step for x")
-	_, err := fmt.Scan(&a, &b, &startValueForX, &endValueForX, &step)
-	if err != nil {
-		log.Fatal(err)
-	}
+	var includeCustomSlice bool
 
-	answerTaskA, err := internal.SolveTaskA(a, b, startValueForX, endValueForX, step)
-	if err != nil {
-		log.Fatal(err)
-	}
+	flag.Float64Var(&a, "a", 0.4, "sets value of variable a")
+	flag.Float64Var(&b, "b", 0.8, "sets value of variable b")
+	flag.Float64Var(&startValueForX, "start", 3.2, "sets the start x value")
+	flag.Float64Var(&endValueForX, "end", 6.2, "sets the end x value")
+	flag.Float64Var(&step, "step", 0.6, "sets the delta x")
+	flag.BoolVar(&includeCustomSlice, "include-slice", false, "set this flag to true to include user-inputted slice")
+
+	flag.Parse()
+
+	fmt.Println("Task A:")
+	answerTaskA, _ := internal.SolveTaskA(a, b, startValueForX, endValueForX, step)
 	internal.PrintFunctionValue(answerTaskA)
 
-	fmt.Println("Task B: please, enter a, b parameters and values for x itself")
-	_, err = fmt.Scan(&a, &b)
-	if err != nil {
-		log.Fatal(err)
-	}
+	fmt.Println("Task B:")
+	var variableValues = []float64{4.48, 3.56, 2.78, 5.28, 3.21}
 
-	variableValues := internal.ReadUserInput()
+	if includeCustomSlice {
+		variableValues = internal.ReadUserInput()
+	}
 	answerTaskB := internal.SolveTaskB(a, b, variableValues)
 	internal.PrintFunctionValue(answerTaskB)
 }
