@@ -8,7 +8,6 @@ func formula(x float64, a float64, b float64) float64 {
 }
 
 func TaskA(a float64, b float64, xn float64, xk float64, xd float64) []float64 {
-	
 	var res []float64
 	for i := xn; i < xk; i = i + xd {
 		res = append(res, formula(i, a, b))

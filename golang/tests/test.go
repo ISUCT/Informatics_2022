@@ -22,12 +22,11 @@ func TestTaskA(t *testing.T) {
 	var testResA []float64 = internal.TaskA(a, b, xn, xk, xd)
 
 	fmt.Println("Task A: Test inputs")
-	if (xn < xk && xd > 0) || (xn > xk && xd < 0){
+	if (xn < xk && xd > 0) || (xn > xk && xd < 0) {
 		fmt.Print("- Passed")
 	} else {
 		fmt.Print("- Failed :", xn, xk, xd)
 	}
-
 
 	fmt.Println("Task A: Test value")
 	if assert.InDelta(t, resultA, testResA[1], 0.001) {
