@@ -62,15 +62,3 @@ func findAll(n int, massiv []int) []int {
 	}
 	return out
 }
-
-func sumOfMinimums(matrix [][]int) int {
-	var summa = 0
-	for i := 0; i <= len(matrix); i++ {
-		for j := 0; j <= len(matrix); j++ {
-			if matrix[i][j] >= matrix[i][j+1] {
-				summa += matrix[i][j+1]
-			}
-		}
-	}
-	return summa
-}
