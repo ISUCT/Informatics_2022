@@ -11,37 +11,58 @@ import (
 func TestTaskA(t *testing.T) {
 	t.Parallel()
 
-	var resultsA = [6]float64{-2867.2049337558983, -879771.242424423, 60553.396028559044, 7705.642156268663, 2947.1559153687504, 1627.2100029870098}
+	var resultA float64 = -2867.204
 
 	const a float64 = 4.1
 	const b float64 = 2.7
+	const xn float64 = 1.5
+	const xk float64 = 3.5
+	const xd float64 = 0.4
 
-	var testResA []float64 = internal.TaskA(a, b)
+	var testResA []float64 = internal.TaskA(a, b, xn, xk, xd)
 
-	for i := 0; i < len(resultsA); i++ {
-		if assert.Equal(t, resultsA[i], testResA[i]) {
-			fmt.Println("Task A: Test ", i+1, "- Passed")
-		} else {
-			fmt.Println("Task A: Test ", i+1, "- Failed :", testResA[i])
-		}
+	fmt.Println("Task A: Test inputs")
+	if (xn < xk && xd > 0) || (xn > xk && xd < 0){
+		fmt.Print("- Passed")
+	} else {
+		fmt.Print("- Failed :", xn, xk, xd)
+	}
+
+
+	fmt.Println("Task A: Test value")
+	if assert.InDelta(t, resultA, testResA[1], 0.001) {
+		fmt.Print("- Passed")
+	} else {
+		fmt.Print("- Failed :", testResA[1])
+	}
+	fmt.Println("Task A: Test length")
+	if assert.InDelta(t, 6, len(testResA), 0) {
+		fmt.Print("- Passed")
+	} else {
+		fmt.Print("- Failed :", len(testResA))
 	}
 }
 
 func TestTaskB(t *testing.T) {
 	t.Parallel()
 
-	var resultsB = [5]float64{-879771.242424423, 392039.14018305, 43864.686778786934, 6807.290024311177, 2651.777897551827}
+	var resultB float64 = -879771.242
 
 	const a float64 = 4.1
 	const b float64 = 2.7
 
 	var testResB []float64 = internal.TaskB(a, b)
 
-	for i := 0; i < len(resultsB); i++ {
-		if assert.Equal(t, resultsB[i], testResB[i]) {
-			fmt.Println("Task B: Test ", i+1, "- Passed")
-		} else {
-			fmt.Println("Task B: Test ", i+1, "- Failed", testResB[i])
-		}
+	fmt.Println("Task B: Test value")
+	if assert.InDelta(t, resultB, testResB[1], 0.001) {
+		fmt.Print("- Passed")
+	} else {
+		fmt.Print("- Failed :", testResB[1])
+	}
+	fmt.Println("Task B: Test length")
+	if assert.InDelta(t, 6, len(testResB), 0) {
+		fmt.Print("- Passed")
+	} else {
+		fmt.Print("- Failed :", len(testResB))
 	}
 }

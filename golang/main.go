@@ -9,8 +9,11 @@ import (
 func main() {
 	const a float64 = 4.1
 	const b float64 = 2.7
+	const xn float64 = 1.5
+	const xk float64 = 3.5
+	const xd float64 = 0.4
 
-	fmt.Println(internal.TaskA(a, b))
+	fmt.Println(internal.TaskA(a, b, xn, xk, xd))
 	fmt.Println(internal.TaskB(a, b))
 
 	fmt.Println("Задания с Codewars")

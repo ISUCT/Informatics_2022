@@ -7,10 +7,10 @@ func formula(x float64, a float64, b float64) float64 {
 	return y
 }
 
-func TaskA(a float64, b float64) []float64 {
-	var i float64 = 1.5
+func TaskA(a float64, b float64, xn float64, xk float64, xd float64) []float64 {
+	
 	var res []float64
-	for ; i < 3.5; i = i + 0.4 {
+	for i := xn; i < xk; i = i + xd {
 		res = append(res, formula(i, a, b))
 	}
 	return res
