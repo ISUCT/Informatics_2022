@@ -26,6 +26,8 @@ func main() {
 
 	//internal.GameOfLife(1, 5, 5)
 
+	fmt.Println(internal.PolishCow("Gdzie jest biały węgorz?"))
+
 	//Code to convert []int to []string
 	nums := []int{6, 9, 3, 4, 3, 82, 11}
 	sNums := make([]string, len(nums))

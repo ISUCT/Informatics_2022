@@ -1,6 +1,9 @@
 package internal
 
-import "math"
+import (
+	"math"
+	"strings"
+)
 
 func EvenOrOdd(num int) string {
 	if num%2 == 0 {
@@ -43,26 +46,22 @@ func HeroWithGunShootsDragons(ammo int, dragons int) bool {
 //Codewars 2: Возвращение
 
 // I hate linter, because it can't import "strings" and add string.Replace function
-// func PolishCow(text string) string {
-// 	var symbols = map[string]string{
-// 		"ą": "a",
-// 		"ć": "c",
-// 		"ę": "e",
-// 		"ł": "l",
-// 		"ń": "n",
-// 		"ó": "o",
-// 		"ś": "s",
-// 		"ź": "z",
-// 		"ż": "z",
-// 	}
-// 	var symbolsValues = []string{
-// 		"a", "c", "e", "l", "n", "o", "s", "z",
-// 	}
-// 	for i := 0; i < len(symbolsValues); i++ {
-// 		text = text.Replace(symbolsValues[i], )
-// 	}
-// 	return text
-// }
+func PolishCow(text string) string {
+	var symbols = [][]string{
+		{"ą", "a"},
+		{"ć", "c"},
+		{"ę", "e"},
+		{"ł", "l"},
+		{"ń", "n"},
+		{"ó", "o"},
+		{"ź", "z"},
+		{"ż", "z"},
+	}
+	for i := 0; i < len(symbols); i++ {
+		text = strings.Replace(text, symbols[i][0], symbols[i][1], -1)
+	}
+	return text
+}
 
 func Find_all(arr []string, search string) []int {
 	var res []int
