@@ -27,6 +27,10 @@ func main() {
 		false, false, true,  true }
 	fmt.Println(countSheep(sheep))
 
+	//codewars 3
+	fmt.Println(fillArray(10))
+	fmt.Println(fillArray(1))
+
 }
 
 //task 7
@@ -64,5 +68,14 @@ func countSheep(sheepArray []bool) int {
 		}
 	}
 	return sheepCount
+}
+
+//codewars 3
+func fillArray(length int) []int {
+	array := []int {}
+	for i:=1; i<=length; i++ {
+		array = append(array,i)
+	}
+	return array
 }
 
