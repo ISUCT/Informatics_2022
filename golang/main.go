@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"isuct.ru/informatics2022/internal"
 )
@@ -24,4 +25,21 @@ func main() {
 	fmt.Println(internal.HeroWithGunShootsDragons(37, 20))
 
 	//internal.GameOfLife(1, 5, 5)
+
+	//Code to convert []int to []string
+	nums := []int{6, 9, 3, 4, 3, 82, 11}
+	sNums := make([]string, len(nums))
+	for i, x := range nums {
+		sNums[i] = strconv.Itoa(x)
+	}
+
+	fmt.Println(internal.Find_all(sNums, fmt.Sprint(3)))
+
+	var exampleArr = [][]int{
+		{1, 2, 3, 4, 5},
+		{5, 6, 7, 8, 9},
+		{20, 21, 34, 56, 100},
+	}
+
+	fmt.Println(internal.SumOfMin(exampleArr, 3, 5))
 }
