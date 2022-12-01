@@ -35,6 +35,10 @@ func main() {
 	fmt.Println(countPages(5,5))
 	fmt.Println(countPages(-5,5))
 
+	//codewars 5
+	fmt.Println(isHeroGonnaSurvive(2,1))
+	fmt.Println(isHeroGonnaSurvive(5,100))
+	fmt.Println(isHeroGonnaSurvive(100,5))
 }
 
 //task 7
@@ -89,4 +93,10 @@ func countPages(n int, m int) int {
 		return 0
 	}
 	return n * m
+}
+
+//codewars 5
+func isHeroGonnaSurvive(bulletCount int, dragonCount int) bool {
+	var bulletCountToWinDragons = dragonCount * 2
+	return bulletCount >= bulletCountToWinDragons
 }
