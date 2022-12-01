@@ -16,6 +16,17 @@ func main() {
 	//codewars 1
 	fmt.Println(evenOddCheck(2))
 	fmt.Println(evenOddCheck(5))
+	
+	//codewars 2
+	sheep := []bool {
+		true,  true,  true,  false,
+		true,  true,  true,  true,
+		true,  false, true,  false,
+		true,  false, false, true,
+		true,  true,  true,  true,
+		false, false, true,  true }
+	fmt.Println(countSheep(sheep))
+
 }
 
 //task 7
@@ -42,5 +53,16 @@ func evenOddCheck(num int) string {
 	} else {
 		return "Odd"
 	}
+}
+
+//codewars 2
+func countSheep(sheepArray []bool) int {
+	var sheepCount = 0
+	for i:=0; i<len(sheepArray); i++ {
+		if(sheepArray[i]) {
+			sheepCount += 1
+		}
+	}
+	return sheepCount
 }
 
