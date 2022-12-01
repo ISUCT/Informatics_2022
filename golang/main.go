@@ -31,6 +31,10 @@ func main() {
 	fmt.Println(fillArray(10))
 	fmt.Println(fillArray(1))
 
+	//codewars 4
+	fmt.Println(countPages(5,5))
+	fmt.Println(countPages(-5,5))
+
 }
 
 //task 7
@@ -79,3 +83,10 @@ func fillArray(length int) []int {
 	return array
 }
 
+//codewars 4
+func countPages(n int, m int) int {
+	if(n<0 || m<0) {
+		return 0
+	}
+	return n * m
+}
