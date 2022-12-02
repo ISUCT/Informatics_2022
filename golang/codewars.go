@@ -74,5 +74,4 @@ func sumOfMinimums(matrix [][]uint) uint {
 		summa += scores[0]
 	}
 	return summa
-
 }
