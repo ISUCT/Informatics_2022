@@ -1,32 +1,35 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal"
 )
 
-func evaluatingFunction(a, b, x float64) float64 {
-	var functionValue float64 = ((math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a / b))) * math.Pow(a*b, 1.0/3.0)
-	return functionValue
-}
-
-func printFunctionValue(x, functionValue float64) {
-	fmt.Printf("f(%.3g) = %.13g\n", x, functionValue)
-}
-
 func main() {
-	fmt.Printf("=======\nЗадача A\n=======\n")
-	a, b := 0.4, 0.8
-	startValueForX := 3.2
-	endValueForX := 6.2
-	step := 0.6
-	for x := startValueForX; x <= endValueForX; x += step {
-		printFunctionValue(x, evaluatingFunction(a, b, x))
-	}
+	var a, b float64
+	var startValueForX, endValueForX, step float64
 
-	fmt.Printf("=======\nЗадача B\n=======\n")
-	variableValues := [5]float64{4.48, 3.56, 2.78, 5.28, 3.21}
-	for _, x := range variableValues {
-		printFunctionValue(x, evaluatingFunction(a, b, x))
+	flag.Float64Var(&a, "a", 0.4, "sets value of variable a")
+	flag.Float64Var(&b, "b", 0.8, "sets value of variable b")
+	flag.Float64Var(&startValueForX, "start", 3.2, "sets the start x value")
+	flag.Float64Var(&endValueForX, "end", 6.2, "sets the end x value")
+	flag.Float64Var(&step, "step", 0.6, "sets the delta x")
+	includeCustomSlice := flag.Bool("include-slice", false, "set this flag to true to include user-inputted slice (default {4.48, 3.56, 2.78, 5.28, 3.21})")
+
+	flag.Parse()
+
+	fmt.Println("Task A:")
+	answerTaskA, _ := internal.SolveTaskA(a, b, startValueForX, endValueForX, step)
+	internal.PrintFunctionValue(answerTaskA)
+
+	fmt.Println("Task B:")
+	var variableValues = []float64{4.48, 3.56, 2.78, 5.28, 3.21}
+
+	if *includeCustomSlice {
+		variableValues = internal.ReadUserInput()
 	}
+	answerTaskB := internal.SolveTaskB(a, b, variableValues)
+	internal.PrintFunctionValue(answerTaskB)
 }
