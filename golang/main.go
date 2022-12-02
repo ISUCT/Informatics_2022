@@ -15,7 +15,7 @@ func main() {
 	const xd float64 = 0.4
 
 	fmt.Println(internal.TaskA(a, b, xn, xk, xd))
-	fmt.Println(internal.TaskB(a, b))
+	fmt.Println(internal.TaskB(a, b, []float64{1.9, 2.15, 2.34, 2.74, 3.16}))
 
 	fmt.Println("Задания с Codewars")
 	fmt.Println(internal.EvenOrOdd(16))
@@ -35,7 +35,7 @@ func main() {
 		sNums[i] = strconv.Itoa(x)
 	}
 
-	fmt.Println(internal.Find_all(sNums, fmt.Sprint(3)))
+	fmt.Println(internal.FindAll(sNums, fmt.Sprint(3)))
 
 	var exampleArr = [][]int{
 		{1, 2, 3, 4, 5},

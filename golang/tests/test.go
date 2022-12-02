@@ -1,7 +1,6 @@
 package main_test
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,25 +20,12 @@ func TestTaskA(t *testing.T) {
 
 	var testResA []float64 = internal.TaskA(a, b, xn, xk, xd)
 
-	fmt.Println("Task A: Test inputs")
-	if (xn < xk && xd > 0) || (xn > xk && xd < 0) {
-		fmt.Print("- Passed")
-	} else {
-		fmt.Print("- Failed :", xn, xk, xd)
-	}
+	assert.Equal(t, true, (xn < xk && xd > 0) || (xn > xk && xd < 0))
+	assert.Equal(t, true, (xd > xk-xn) || (xd < xn-xk))
 
-	fmt.Println("Task A: Test value")
-	if assert.InDelta(t, resultA, testResA[1], 0.001) {
-		fmt.Print("- Passed")
-	} else {
-		fmt.Print("- Failed :", testResA[1])
-	}
-	fmt.Println("Task A: Test length")
-	if assert.InDelta(t, 6, len(testResA), 0) {
-		fmt.Print("- Passed")
-	} else {
-		fmt.Print("- Failed :", len(testResA))
-	}
+	assert.InDelta(t, resultA, testResA[1], 0.001)
+
+	assert.InDelta(t, 6, len(testResA), 0)
 }
 
 func TestTaskB(t *testing.T) {
@@ -50,18 +36,16 @@ func TestTaskB(t *testing.T) {
 	const a float64 = 4.1
 	const b float64 = 2.7
 
-	var testResB []float64 = internal.TaskB(a, b)
+	var testResB []float64 = internal.TaskB(a, b, []float64{1.9, 2.15, 2.34, 2.74, 3.16})
 
-	fmt.Println("Task B: Test value")
-	if assert.InDelta(t, resultB, testResB[1], 0.001) {
-		fmt.Print("- Passed")
-	} else {
-		fmt.Print("- Failed :", testResB[1])
-	}
-	fmt.Println("Task B: Test length")
-	if assert.InDelta(t, 6, len(testResB), 0) {
-		fmt.Print("- Passed")
-	} else {
-		fmt.Print("- Failed :", len(testResB))
-	}
+	assert.InDelta(t, resultB, testResB[1], 0.001)
+
+	assert.Equal(t, 6, len(testResB))
+	assert.Equal(t, []float64{}, internal.TaskB(a, b, []float64{}))
+}
+
+func TestFormula(t *testing.T) {
+	t.Parallel()
+
+	//assert.Equal()
 }

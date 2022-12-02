@@ -62,7 +62,7 @@ func PolishCow(text string) string {
 	return text
 }
 
-func Find_all(arr []string, search string) []int {
+func FindAll(arr []string, search string) []int {
 	var res []int
 	for i := 0; i < len(arr); i++ {
 		if arr[i] == search {

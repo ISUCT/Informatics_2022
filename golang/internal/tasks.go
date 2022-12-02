@@ -14,11 +14,9 @@ func TaskA(a float64, b float64, xn float64, xk float64, xd float64) []float64 {
 	}
 	return res
 }
-func TaskB(a float64, b float64) []float64 {
-	var x []float64 = []float64{1.9, 2.15, 2.34, 2.74, 3.16}
+func TaskB(a float64, b float64, x []float64) []float64 {
 	var res []float64
-	var i int8
-	for ; i < 5; i++ {
+	for i := 0; i < len(x); i++ {
 		res = append(res, formula(x[i], a, b))
 	}
 	return res
