@@ -1,0 +1,2 @@
+# ignore any file named __debug_bin.exe
+__debug_bin.exe
