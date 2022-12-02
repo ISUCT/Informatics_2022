@@ -9,15 +9,14 @@ func main() {
 	var masB = []float64{1.16, 1.32, 1.47, 1.65, 1, 93}
 	const a float64 = 2.0
 
-	var masA []float64
-
+	// var masA []float64 = make([]float64, 0)
 	fmt.Println("___Задание А___")
-	fmt.Println(TaskA(a, masA))
+	fmt.Println(TaskA(a))
 	fmt.Println("___Задание В___")
 	fmt.Println(TaskB(a, masB))
 }
 
-func TaskA(a float64, masA []float64) []float64 {
+func TaskA(a float64) []float64 {
 	var taskA []float64
 	var nx float64 = 1.2
 	var kx float64 = 4.2
