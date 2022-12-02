@@ -45,7 +45,6 @@ func HeroWithGunShootsDragons(ammo int, dragons int) bool {
 
 //Codewars 2: Возвращение
 
-// I hate linter, because it can't import "strings" and add string.Replace function
 func PolishCow(text string) string {
 	var symbols = [][]string{
 		{"ą", "a"},
