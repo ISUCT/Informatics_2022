@@ -62,3 +62,17 @@ func findAll(n int, massiv []int) []int {
 	}
 	return out
 }
+
+func sumOfMinimums(matrix [][]uint) uint {
+	var summa uint
+	for _, scores := range matrix {
+		for _, num := range scores {
+			if num < scores[0] {
+				scores[0] = num
+			}
+		}
+		summa += scores[0]
+	}
+	return summa
+
+}
