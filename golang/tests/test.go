@@ -21,15 +21,19 @@ func TestTaskA(t *testing.T) {
 	var testResA []float64 = internal.TaskA(a, b, xn, xk, xd)
 
 	t.Run("Check 1 value", func(t *testing.T) {
+		t.Parallel()
 		assert.InDelta(t, resultA, testResA[1], 0.001)
 	})
 	t.Run("Check xn, xk and xd > 0", func(t *testing.T) {
+		t.Parallel()
 		assert.Equal(t, true, (xn < xk && xd > 0) || (xn > xk && xd < 0))
 	})
 	t.Run("Check xd compared to xk and xn", func(t *testing.T) {
+		t.Parallel()
 		assert.Equal(t, true, (xd < xk-xn) || (xd > xn-xk))
 	})
 	t.Run("Check xd compared to xk and xn", func(t *testing.T) {
+		t.Parallel()
 		assert.InDelta(t, 6, len(testResA), 0)
 	})
 }
