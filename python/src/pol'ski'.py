@@ -10,3 +10,4 @@ x = x.replace('ś', 's')
 x = x.replace('ź', 'z')
 
 print(x)
+

@@ -13,3 +13,4 @@ def find_all(list, x):
 
 
 print(find_all([6, 9, 3, 4, 3, 82, 11], 3))
+
