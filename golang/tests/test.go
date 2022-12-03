@@ -20,12 +20,18 @@ func TestTaskA(t *testing.T) {
 
 	var testResA []float64 = internal.TaskA(a, b, xn, xk, xd)
 
-	assert.Equal(t, true, (xn < xk && xd > 0) || (xn > xk && xd < 0))
-	assert.Equal(t, true, (xd > xk-xn) || (xd < xn-xk))
-
-	assert.InDelta(t, resultA, testResA[1], 0.001)
-
-	assert.InDelta(t, 6, len(testResA), 0)
+	t.Run("Check 1 value", func(t *testing.T) {
+		assert.InDelta(t, resultA, testResA[1], 0.001)
+	})
+	t.Run("Check xn, xk and xd > 0", func(t *testing.T) {
+		assert.Equal(t, true, (xn < xk && xd > 0) || (xn > xk && xd < 0))
+	})
+	t.Run("Check xd compared to xk and xn", func(t *testing.T) {
+		assert.Equal(t, true, (xd < xk-xn) || (xd > xn-xk))
+	})
+	t.Run("Check xd compared to xk and xn", func(t *testing.T) {
+		assert.InDelta(t, 6, len(testResA), 0)
+	})
 }
 
 func TestTaskB(t *testing.T) {
@@ -47,5 +53,12 @@ func TestTaskB(t *testing.T) {
 func TestFormula(t *testing.T) {
 	t.Parallel()
 
-	//assert.Equal()
+	const a float64 = 4.1
+	const b float64 = 2.7
+
+	// Не уверен, что строка ниже вообще будет работать, но пусть будет
+	assert.Nil(t, internal.Formula(1, a, b))
+
+	assert.InDelta(t, 3576.30, internal.Formula(3, a, b), 0.01)
+
 }
