@@ -1,6 +1,7 @@
 ﻿namespace CourceApp
 {
     using System;
+    using CourseApp;
 
     internal class Program
     {
@@ -17,6 +18,8 @@
             {
                 Console.WriteLine(elem);
             }
+
+            Console.WriteLine(Codewars.PolishToEnglish("Jędrzej Błądziński"));
          }
     }
 }
