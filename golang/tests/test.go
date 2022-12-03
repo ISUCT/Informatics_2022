@@ -59,10 +59,8 @@ func TestFormula(t *testing.T) {
 
 	const a float64 = 4.1
 	const b float64 = 2.7
-
 	// Не уверен, что строка ниже вообще будет работать, но пусть будет
 	assert.Nil(t, internal.Formula(1, a, b))
 
 	assert.InDelta(t, 3576.30, internal.Formula(3, a, b), 0.01)
-
 }
