@@ -37,7 +37,7 @@ def correct_polish_letters(st):
         try:
             st = st.replace(i, d[f'{i}'])
         except:
-            ...
+            continue
     return st
 
 
