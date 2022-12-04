@@ -12,12 +12,12 @@ def count_sheeps(sheep):
 
 
 def monkey_count(n):
-    k = 0
-    c: list = []
-    while k < n:
-        k += 1
-        c.append(k)
-    return c
+    count = 0
+    number: list = []
+    while count < n:
+        count += 1
+        number.append(count)
+    return number
 
 
 def paperwork(n, m):

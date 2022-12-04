@@ -10,12 +10,12 @@ if __name__ == "__main__":
     print(summ(3, 4))
 
 
-def Aformula(x: float = 2.1, a: float = 1.35, b: float = 0.98):
+def Aformula(x=2.1, a=1.35, b=0.98, x_start=1.14, x_finish=4.24, x_delta=0.62):
     list_reply: list = []
-    if 1.14 > x or x > 4.24:
+    if x_start > x or x > x_finish or x < 0 or x == 1:
         list_reply.append(None)
-    while 1.14 <= x <= 4.24:
-        x += 0.62
+    while x_start <= x <= x_finish:
+        x += x_delta
         y = ((a * x + b) ** (1 / 3)) / ((math.log(x, 10))**2)
         list_reply.append(y)
     return list_reply
