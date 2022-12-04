@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 func EvenOrOdd(number int) string {
 	if number%2 == 0 {
 		return "Even"
@@ -40,4 +42,43 @@ func IsHeGonnaSurvive(bullets, dragons int) string {
 	} else {
 		return "False"
 	}
+}
+
+
+func Polish_alphabet(PolishText string) string {
+	translator := strings.NewReplacer(
+		"ą", "a",
+		"ć", "c",
+		"ę", "e",
+		"ł", "l",
+		"ń", "n",
+		"ó", "o",
+		"ś", "s",
+		"ź", "z",
+		"ż", "z",
+	)
+	return translator.Replace(PolishText)
+}
+
+func Find_all_occ(array []int, n int) []int {
+	index := make([]int, 0, len(array))
+	for i, value := range array {
+		if value == n {
+			index = append(index, i)
+		}
+	}
+	return index
+}
+
+func Sum_of_Minimums(array [][]uint) uint {
+	var sum uint
+	for _, nest_array := range array {
+		for _, minimum := range nest_array {
+			if minimum < nest_array[0] {
+				nest_array[0] = minimum
+			} 
+		}
+		sum += nest_array[0]
+	}
+	return sum
 }
