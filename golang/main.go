@@ -1,35 +1,60 @@
 package main
 
-import (
-	"flag"
-	"fmt"
+func aliveCellsCount(grid [][]string, rows, columns int) [][]int {
+	newGrid := make([][]string, rows+1)
+	for i := 1; i <= rows; i++ {
+		for j := 1; j <= columns; j++ {
+			newGrid[i][j] = grid[i-1][j-1]
+		}
+	}
 
-	"isuct.ru/informatics2022/internal"
-)
+	aliveCellsCount := make([][]int, rows)
+	for i := 1; i <= rows; i++ {
+		for j := 1; j <= columns; j++ {
+			// Это лучшее, что я могла придумать в 11 вечера
+			aliveCellsCount[i-1][j-1] =
+				isCellAlive(newGrid[i+1][j]) + isCellAlive(newGrid[i][j+1]) + isCellAlive(newGrid[i+1][j+1]) +
+					isCellAlive(newGrid[i-1][j]) + isCellAlive(newGrid[i][j-1]) + isCellAlive(newGrid[i-1][j-1]) +
+					isCellAlive(newGrid[i+1][j-1]) + isCellAlive(newGrid[i-1][j+1])
+		}
+	}
+
+	return aliveCellsCount
+}
+
+func isCellAlive(element string) int {
+	if element == "#" {
+		return 1
+	}
+	return 0
+}
 
 func main() {
-	var a, b float64
-	var startValueForX, endValueForX, step float64
-
-	flag.Float64Var(&a, "a", 0.4, "sets value of variable a")
-	flag.Float64Var(&b, "b", 0.8, "sets value of variable b")
-	flag.Float64Var(&startValueForX, "start", 3.2, "sets the start x value")
-	flag.Float64Var(&endValueForX, "end", 6.2, "sets the end x value")
-	flag.Float64Var(&step, "step", 0.6, "sets the delta x")
-	includeCustomSlice := flag.Bool("include-slice", false, "set this flag to true to include user-inputted slice (default {4.48, 3.56, 2.78, 5.28, 3.21})")
-
-	flag.Parse()
-
-	fmt.Println("Task A:")
-	answerTaskA, _ := internal.SolveTaskA(a, b, startValueForX, endValueForX, step)
-	internal.PrintFunctionValue(answerTaskA)
-
-	fmt.Println("Task B:")
-	var variableValues = []float64{4.48, 3.56, 2.78, 5.28, 3.21}
-
-	if *includeCustomSlice {
-		variableValues = internal.ReadUserInput()
+	// n - width, m - height of a grid, s - steps
+	var n, m, s int
+	n, m, s = 5, 5, 4
+	grid := make([][]string, m)
+	for i := 0; i < n; i++ {
+		grid[i] = make([]string, n)
 	}
-	answerTaskB := internal.SolveTaskB(a, b, variableValues)
-	internal.PrintFunctionValue(answerTaskB)
+
+	grid = [][]string{{"....."}, {"..#.."}, {"#.#.."}, {".##.."}, {"....."}}
+
+	for ; s > 0; s -= 1 {
+		aliveCellsCount := aliveCellsCount(grid, m, n)
+		for indexRow := 0; indexRow <= m; indexRow += 1 {
+			for indexColumn := 0; indexColumn <= n; indexColumn += 1 {
+				element := aliveCellsCount[indexRow][indexColumn]
+				if grid[indexRow][indexColumn] == "." {
+					if element == 3 {
+						grid[indexRow][indexColumn] = "#"
+					}
+				} else if grid[indexRow][indexColumn] == "#" {
+					if element != 2 && element != 3 {
+						grid[indexRow][indexColumn] = "."
+					}
+				}
+			}
+		}
+	}
 }
