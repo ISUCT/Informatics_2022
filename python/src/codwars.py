@@ -10,9 +10,6 @@ def count_sheeps(sheep):
     return sheep.count(True)
 
 
-monkey = int()
-
-
 def monkey_count(monkey):
     c = list()
     for i in range(1, monkey + 1):
@@ -32,3 +29,10 @@ def hero(bullets: int, dragons: int):
         return True
     else:
         return False
+
+
+print('1)', even_or_odd(4))
+print('2)',count_sheeps([True, True, True, False, True, True, True, True]))
+print('3)',monkey_count(10))
+print('4)',paperwork(10, 3))
+print('5)',hero(10, 3))
