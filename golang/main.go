@@ -33,4 +33,14 @@ func main() {
 	var bullets = 5
 	var dragons = 4
 	fmt.Println(Hero(bullets, dragons))
+	fmt.Println("CorrectPolishLetters")
+	TextPolish := "Jędrzej Błądziński"
+	fmt.Println(correctPolishLetters(TextPolish))
+	fmt.Println("FindAll")
+	var n2 = 3
+	massiv := [5]int{3, 4, 3, 5, 7}
+	fmt.Println(findAll(n2, massiv[:]))
+	fmt.Println("SumOfMinimums")
+	var matrix = [][]int{{1, 4, 8}, {5, 7, 4}, {4, 9, 2}}
+	fmt.Println(sumOfMinimums(matrix[:][:]))
 }
