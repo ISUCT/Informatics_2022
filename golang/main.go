@@ -8,19 +8,19 @@ import (
 func main() {
 	var masB = []float64{1.16, 1.32, 1.47, 1.65, 1, 93}
 	const a float64 = 2.0
+	var nx float64 = 1.2
+	var kx float64 = 4.2
+	var dx float64 = 0.6
 
 	// var masA []float64 = make([]float64, 0)
 	fmt.Println("___Задание А___")
-	fmt.Println(TaskA(a))
+	fmt.Println(TaskA(a, nx, kx, dx))
 	fmt.Println("___Задание В___")
 	fmt.Println(TaskB(a, masB))
 }
 
-func TaskA(a float64) []float64 {
+func TaskA(a, nx, kx, dx float64) []float64 {
 	var taskA []float64
-	var nx float64 = 1.2
-	var kx float64 = 4.2
-	var dx float64 = 0.6
 
 	for x := nx; x <= kx; x += dx {
 		taskA = append(taskA, formula(x, a))
