@@ -13,16 +13,19 @@ func main() {
 }
 func zadA(xn float64, xk float64, dx float64) []float64 {
 	var x float64 = xn
-	var massivA = make([]float64, 6)
+	var massivA = make([]float64, 0)
 	for ; x <= xk; x += dx {
-		massivA = append(massivA, math.Sqrt(math.Sqrt(math.Abs(x*x-2.5)))+math.Cbrt(math.Log10(x*x)))
+		massivA = append(massivA, form(x))
 	}
 	return massivA
 }
 func zadB(massivB []float64) []float64 {
 	var i int8 = 0
 	for ; i <= 4; i += 1 {
-		massivB[i] = math.Sqrt(math.Sqrt(math.Abs(massivB[i]*massivB[i]-2.5))) + math.Cbrt(math.Log10(massivB[i]*massivB[i]))
+		massivB[i] = form(massivB[i])
 	}
 	return massivB
+}
+func form(y float64) float64 {
+	return (math.Sqrt(math.Sqrt(math.Abs(y*y-2.5))) + math.Cbrt(math.Log10(y*y)))
 }
