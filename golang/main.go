@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
+	"time"
 )
 
 func formula(x float64) float64 {
@@ -20,7 +22,7 @@ func formula(x float64) float64 {
 	return i
 }
 
-func main() {
+func mainn() {
 	fmt.Println("Задание А")
 	var x float64 = 3.5
 	for ; x < 6.5; x = x + 0.6 {
@@ -32,4 +34,96 @@ func main() {
 	fmt.Println(5.21)
 	fmt.Println(6.28)
 	fmt.Println(3.47)
+}
+
+func task1(n int64) {
+	if n%2 == 0 {
+		fmt.Println("Even")
+	}
+	if n%2 != 0 {
+		fmt.Println("Odd")
+	}
+}
+
+func task2() {
+	sheeps := [...]bool{
+		true, true, true, false,
+		true, true, true, true,
+		true, false, true, false,
+		true, false, false, true,
+		true, true, true, true,
+		false, false, true, true,
+	}
+	kol := 0
+	for i := 0; i < len(sheeps); i++ {
+		if sheeps[i] == true || sheeps[i] == false {
+			if sheeps[i] == true {
+				kol += 1
+			}
+		} else {
+			fmt.Println("Values ", i, " undefined")
+		}
+	}
+	fmt.Println(kol)
+}
+
+func task3() {
+	n := 0
+	fmt.Scan(&n)
+	monkeys := make([]int, n)
+	for i := 0; i < n; i++ {
+		monkeys[i] = i + 1
+	}
+	fmt.Println(monkeys)
+}
+
+func task4() {
+	n := 0
+	m := 0
+	fmt.Println("Classmates = ")
+	fmt.Scan(&n)
+	fmt.Println("Pages = ")
+	fmt.Scan(&m)
+	if m > 0 && n > 0 {
+		kol := m * n
+		fmt.Println(kol)
+	} else {
+		fmt.Println("0")
+	}
+
+}
+
+func randomInt(min, max int) int {
+	return min + rand.Intn(max-min)
+}
+func task5() {
+	bullets := 0
+	fmt.Println("Bullets: ")
+	fmt.Scan(&bullets)
+	rand.Seed(time.Now().UnixNano())
+	dragons := randomInt(1, 11)
+	if bullets >= (dragons * 2) {
+		fmt.Println("True")
+	} else {
+		fmt.Println("False")
+	}
+	fmt.Println("There were ", dragons, " dragons")
+}
+
+func main() {
+	fmt.Println("Задание №1")
+	x := 0
+	fmt.Print("x = ")
+	fmt.Scan(&x)
+	task1(int64(x))
+	fmt.Println("Задание №2")
+	task2()
+	fmt.Println("Залание №3")
+	fmt.Println("Введите количесвто обезьян")
+	task3()
+	fmt.Println("Задание №4")
+	task4()
+	fmt.Println("Задание №5")
+	task5()
+
 }

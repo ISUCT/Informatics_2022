@@ -1,0 +1,67 @@
+package main
+
+import "fmt"
+
+func check(n int64) {
+	if n%2 == 0 {
+		fmt.Println("Even")
+	}
+	if n%2 != 0 {
+		fmt.Println("Odd")
+	}
+}
+
+func main() {
+	fmt.Println("Enter a number: ")
+	var n int64
+	fmt.Println(check(n))
+}
+
+
+
+strS := strings.SplitAfter(s, "")
+
+
+func task6() {
+	var s string
+	fmt.Println("Введите строку: ")
+	fmt.Scan(&s)
+
+	var letters = [9]string{"ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"}
+	var diacritics = [9]string{"a", "c", "e", "l", "n", "o", "s", "z", "z"}
+	var strS []string
+	for _, c := range s {
+		strS = append(strS, fmt.Sprintf("%c", c))
+	}
+	for i := 0; i < len(s); i++ {
+		for j := 0; j < len(letters); j++ {
+			if string(strS[i]) == letters[j] {
+				s = strings.Replace(s, string(strS[i]), diacritics[j], 1)
+			}
+		}
+
+	}
+	fmt.Println(s)
+}
+
+func task7() {
+	var s string
+	var n int
+	fmt.Println("Введите значения: ")
+	fmt.Scan(&s)
+	fmt.Println("Введите n: ")
+	fmt.Scan(&n)
+	numbers := strings.Fields(s)
+	for _, number := range numbers {
+		fmt.Printf(number)
+	}
+
+	/*for i := 0; i < len(integers); i++ {
+		integersInt := strconv.Atoi(integers[i])
+	}*/
+
+
+
+	task6()
+	fmt.Println("Задание №7")
+	task7()
