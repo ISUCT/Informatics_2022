@@ -1,5 +1,49 @@
 package main
 
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	taskA()
+	taskB()
+}
+
+func taskA() int {
+	fmt.Println("Part A")
+	var x float64 = 1.23
+	var a float64 = 0.8
+	var b float64 = 0.4
+	for x <= 7.23 {
+		fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+		x = x + 1.2
+	}
+	return 0
+}
+
+func taskB() int {
+	fmt.Println("Part B")
+	var a float64 = 0.8
+	var b float64 = 0.4
+
+	var x float64 = 1.88
+	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+
+	x = 2.26
+	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+
+	x = 3.84
+	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+
+	x = 4.55
+	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+
+	x = -6.21
+	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+	return 0
+}
+
 func EvenOrOdd(number int) string {
 	if number%2 == 0 {
 		return "Even"
