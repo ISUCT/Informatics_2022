@@ -41,6 +41,6 @@ func main() {
 	massiv := [5]int{3, 4, 3, 5, 7}
 	fmt.Println(findAll(n2, massiv[:]))
 	fmt.Println("SumOfMinimums")
-	var matrix = [][]uint{{1, 4, 8}, {5, 7, 4}, {4, 9, 2}}
+	var matrix = [][]int{{1, 4, 8}, {5, 7, 4}, {4, 9, 2}}
 	fmt.Println(sumOfMinimums(matrix[:][:]))
 }
