@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	fmt.Println("ZAD A")
+	fmt.Println("ZADA")
 	fmt.Println(zadA(1.25, 3.25, 0.4))
-	fmt.Println("ZAD B")
+	fmt.Println("ZADB")
 	fmt.Println(zadB([]float64{1.84, 2.71, 3.81, 4.56, 5.62}))
 }
 func zadA(xn float64, xk float64, dx float64) []float64 {
