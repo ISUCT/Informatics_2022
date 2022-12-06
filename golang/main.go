@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
+
+	"isuct.ru/informatics2022/internal"
 )
 
 func main() {
@@ -12,11 +14,21 @@ func main() {
 	var kx float64 = 4.2
 	var dx float64 = 0.6
 
-	// var masA []float64 = make([]float64, 0)
 	fmt.Println("___Задание А___")
 	fmt.Println(TaskA(a, nx, kx, dx))
 	fmt.Println("___Задание В___")
 	fmt.Println(TaskB(a, masB))
+
+	// Задача с Четное-Нечетное
+	fmt.Println(internal.EvenOdd(1703))
+	// Количество овец
+	fmt.Println(internal.Sheep([]bool{true, false, true, true, true, true, false, false}))
+	// Подсчет обезьян
+	fmt.Println(internal.Monkey(10))
+	// Подсчет бумаги
+	fmt.Println(internal.Printer(5, 2))
+	// Драконы
+	fmt.Println(internal.Dragons(5, 2))
 }
 
 func TaskA(a, nx, kx, dx float64) []float64 {
