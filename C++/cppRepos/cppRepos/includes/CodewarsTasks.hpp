@@ -8,23 +8,29 @@
     
 using namespace std;
 
-string EvenOrOddTask(unsigned int num);
+auto EvenOrOddTask(unsigned int num) -> string;
 
-int CountingSheepTask(vector<bool>& sheeps);
+auto CountingSheepTask(vector<bool>& sheeps) -> int;
     
-int CountingSheepTask(list<bool>& sheeps);
+auto CountingSheepTask(list<bool>& sheeps) -> int;
 
-vector<int> CountTheMonkeysTask(int n);
+auto CountingSheepTask(bool* sheeps, unsigned int size) -> int;
 
-int SchoolPaperworkTask(int n, int m);
+auto CountTheMonkeysTask(int n) -> int*;
 
-bool IsHeGonnaSurvie(int countBullets, int countDragons);
+auto SchoolPaperworkTask(int n, int m) -> int;
 
-string PolishAlphabetTask(wstring str);
+auto IsHeGonnaSurvie(int countBullets, int countDragons) -> bool;
 
-vector<int> FindAllOccurrencesOfAnElementInAnArrayTask(vector<int>& arr, int num);
+auto PolishAlphabetTask(wstring str) -> string;
 
-int SumOfMinimums(vector<vector<int>> arr2d);
+auto FindAllOccurrencesOfAnElementInAnArrayTask(vector<int>& arr, int num) -> vector<int>&;
+
+auto FindAllOccurrencesOfAnElementInAnArrayTask(int* arr, unsigned int size, int num) -> int*;
+
+auto SumOfMinimums(vector<vector<int>> arr2d) -> int;
+
+auto SumOfMinimums(int** arr2d, unsigned int m, unsigned int n) -> int;
 
 #endif
 

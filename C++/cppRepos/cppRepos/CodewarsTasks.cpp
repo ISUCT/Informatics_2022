@@ -1,42 +1,57 @@
 ﻿#include "includes/CodewarsTasks.hpp"
 
-string EvenOrOddTask(unsigned int num) {
+auto EvenOrOddTask(unsigned int num) -> string {
     string answ;
     return num % 2 == 0 ? answ = "Even" : answ = "Odd";
 }
 
-int CountingSheepTask(vector<bool>& sheeps) {
+auto CountingSheepTask(vector<bool>& sheeps) -> int {
     int count = 0;
-    for (auto it : sheeps) 
-        if (it) ++count;
+    for (auto it : sheeps) {
+        if (it) {
+            ++count;
+        }
+    }
     return count;
 }
 
-int CountingSheepTask(list<bool>& sheeps) {
+auto CountingSheepTask(list<bool>& sheeps) -> int {
     int count = 0;
-    for (auto it : sheeps) 
-        if (it) ++count;
+    for (auto it : sheeps) {
+        if (it) {
+            ++count;
+        }
+    }
     return count;
 }
 
-vector<int> CountTheMonkeysTask(int n) {
-    vector<int> arr;
-    arr.resize(n);
-    for (int i = 0; i < n; ++i) 
+auto CountingSheepTask(bool* sheeps, unsigned int size) -> int {
+    int count = 0;
+    for (int i = 0; i < size; ++i) {
+        if (sheeps[i]) {
+            ++count;
+        }
+    }
+    return count;
+}
+
+auto CountTheMonkeysTask(int n) -> int* {
+    int* arr = new int[n];
+    for (int i = 0; i < n; ++i) {
         arr[i] = i + 1;
-    return arr;
+    }
 }
 
-int SchoolPaperworkTask(int n, int m) {
+auto SchoolPaperworkTask(int n, int m) -> int {
     int res;
     return n < 0 || m < 0 ? res = 0 : res = n * m;
 }
 
-bool IsHeGonnaSurvie(int countBullets, int countDragons) {
+auto IsHeGonnaSurvie(int countBullets, int countDragons) -> bool {
     return countBullets >= countDragons * 2;
 }
 
-string PolishAlphabetTask(wstring str) {
+auto PolishAlphabetTask(wstring str) -> string {
     string result;
     for (auto ch : str) {
         switch (ch) {
@@ -55,18 +70,50 @@ string PolishAlphabetTask(wstring str) {
     return result;
 }
 
-vector<int> FindAllOccurrencesOfAnElementInAnArrayTask(vector<int>& arr, int num) {
+auto FindAllOccurrencesOfAnElementInAnArrayTask(vector<int>& arr, int num) -> vector<int>& {
     vector<int> res;
-    for (int i = 0; i < arr.size(); ++i)
-        if (arr[i] == num)
+    for (int i = 0; i < arr.size(); ++i) {
+        if (arr[i] == num) {
             res.push_back(i);
+        }
+    }
     return res;
 }
 
-int SumOfMinimums(vector<vector<int>> arr2d) {
+auto FindAllOccurrencesOfAnElementInAnArrayTask(int* arr, unsigned int size, int num) -> int* {
+    int* numPositions = new int[size];
+    int numCount = 0;
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] == num) {
+            numPositions[numCount] = i;
+            ++numCount;
+        }
+    }
+    int* res = new int[numCount];
+    for (int i = 0; i < numCount; ++i) {
+        res[i] = numPositions[i];
+    }
+    return res;
+}
+
+auto SumOfMinimums(vector<vector<int>> arr2d) -> int {
     int res = 0;
     for (auto it : arr2d) {
         res += *min(it.cbegin(), it.cend());
+    }
+    return res;
+}
+
+auto SumOfMinimums(int** arr2d, unsigned int m, unsigned int n) -> int {
+    int res = 0;
+    for (int i = 0; i < m; ++i) {
+        int min = INT16_MAX;
+        for (int j = 0; j < n; ++j) {
+            if (arr2d[i][j] < min) {
+                min = arr2d[i][j];
+            }
+        }
+        res += min;
     }
     return res;
 }
