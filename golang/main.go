@@ -22,20 +22,6 @@ func formula(x float64) float64 {
 	return i
 }
 
-func mainn() {
-	fmt.Println("Задание А")
-	var x float64 = 3.5
-	for ; x < 6.5; x = x + 0.6 {
-		fmt.Println(formula(x))
-	}
-	fmt.Println("Задание В")
-	fmt.Println(2.89)
-	fmt.Println(3.54)
-	fmt.Println(5.21)
-	fmt.Println(6.28)
-	fmt.Println(3.47)
-}
-
 func task1(n int64) {
 	if n%2 == 0 {
 		fmt.Println("Even")
@@ -56,8 +42,8 @@ func task2() {
 	}
 	kol := 0
 	for i := 0; i < len(sheeps); i++ {
-		if sheeps[i] == true || sheeps[i] == false {
-			if sheeps[i] == true {
+		if sheeps[i] || sheeps[i] == false {
+			if sheeps[i] {
 				kol += 1
 			}
 		} else {
@@ -90,7 +76,6 @@ func task4() {
 	} else {
 		fmt.Println("0")
 	}
-
 }
 
 func randomInt(min, max int) int {
@@ -111,10 +96,21 @@ func task5() {
 }
 
 func main() {
+	fmt.Println("Задание А")
+	var x float64 = 3.5
+	for ; x < 6.5; x = x + 0.6 {
+		fmt.Println(formula(x))
+	}
+	fmt.Println("Задание В")
+	fmt.Println(2.89)
+	fmt.Println(3.54)
+	fmt.Println(5.21)
+	fmt.Println(6.28)
+	fmt.Println(3.47)
 	fmt.Println("Задание №1")
-	x := 0
+	y := 0
 	fmt.Print("x = ")
-	fmt.Scan(&x)
+	fmt.Scan(&y)
 	task1(int64(x))
 	fmt.Println("Задание №2")
 	task2()
@@ -125,5 +121,4 @@ func main() {
 	task4()
 	fmt.Println("Задание №5")
 	task5()
-
 }
