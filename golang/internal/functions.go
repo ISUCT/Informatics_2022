@@ -1,55 +1,60 @@
 package internal
 
 import (
-	"errors"
-	"fmt"
 	"log"
-	"math"
 )
 
-func EvaluateFunction(a, b, x float64) (float64, error) {
-	var functionValue float64 = ((math.Pow(a, x) - math.Pow(b, x)) / (math.Log10(a / b))) * math.Cbrt(a*b)
-	if functionValue != functionValue { // NaN != NaN (always)
-		return 0, errors.New("Not a Number")
-	}
-	return functionValue, nil
-}
-
-func PrintFunctionValue(functionValue []float64) {
-	for _, elem := range functionValue {
-		fmt.Println(elem)
+func CheckForError(err error) {
+	if err != nil {
+		log.Fatal(err)
 	}
 }
 
-func SolveTaskA(a, b, startValueForX, endValueForX, step float64) ([]float64, error) {
-	if endValueForX < startValueForX {
-		return nil, errors.New("endValueForX is less than startValueForX")
+// Возвращает координаты соседних клеток
+func GetCoordinatesOfNeighborCells(row, column, width, height int) (coords [][]int) {
+	var coordinatesOfNeighborCells = [][]int{
+		{row + 1, column}, {row, column + 1}, {row + 1, column + 1},
+		{row - 1, column}, {row, column - 1}, {row - 1, column - 1},
+		{row + 1, column - 1}, {row - 1, column + 1},
 	}
-	if (endValueForX > startValueForX) && (step < 0) {
-		return nil, errors.New("Infinite cycle")
-	}
-
-	size := math.Floor(math.Abs((endValueForX-startValueForX)/step)) + 1 // количество членов арифметической прогрессии
-	if size <= 0 {
-		log.Fatal("Size is less or equal to zero")
-	}
-	sliceOfResults := make([]float64, 0, int(size))
-
-	for x := startValueForX; x <= endValueForX; x += step {
-		functionValue, _ := EvaluateFunction(a, b, x)
-		sliceOfResults = append(sliceOfResults, functionValue)
-	}
-	return sliceOfResults, nil
-}
-
-func SolveTaskB(a, b float64, variableValues []float64) []float64 {
-	sliceOfResults := make([]float64, 0, len(variableValues))
-	for _, elem := range variableValues {
-		functionValue, err := EvaluateFunction(a, b, elem)
-		if err != nil {
-			log.Fatal(err.Error())
+	// Проверка на выход за пределы слайса
+	for _, coordinates := range coordinatesOfNeighborCells {
+		w, h := coordinates[0], coordinates[1]
+		if (h < 0 || h > height-1) || (w < 0 || w > width-1) {
+			continue
+		} else {
+			coords = append(coords, coordinates)
 		}
-		sliceOfResults = append(sliceOfResults, functionValue)
 	}
-	return sliceOfResults
+	return coords
+}
+
+// Возвращает количество живых клеток среди соседних
+func CountAliveCells(grid [][]string, coordinatesOfNeighborCells [][]int) (alive int) {
+	for _, coords := range coordinatesOfNeighborCells {
+		i, j := coords[0], coords[1]
+		if grid[i][j] == "#" {
+			alive += 1
+		}
+	}
+	return alive
+}
+
+func MakeASimulationStep(grid, secondGrid [][]string, width, height int) {
+	for i := 0; i < height; i += 1 {
+		for j := 0; j < width; j += 1 {
+			alive := CountAliveCells(grid, GetCoordinatesOfNeighborCells(i, j, width, height))
+			if (grid[i][j] == ".") && (alive == 3) {
+				secondGrid[i][j] = "#"
+			} else if (grid[i][j] == "#") && (alive == 2 || alive == 3) {
+				secondGrid[i][j] = "#"
+			} else {
+				secondGrid[i][j] = "."
+			}
+		}
+	}
+}
+
+func SwapGrids(grid, secondGrid *[][]string) {
+	*grid, *secondGrid = *secondGrid, *grid
 }
