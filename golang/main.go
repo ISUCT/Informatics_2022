@@ -6,42 +6,43 @@ import (
 )
 
 func main() {
-	taskA()
-	taskB()
+	fmt.Println(taskA(0.8, 0.4, 1.23))
+	fmt.Println(taskB(0.8, 0.4))
+
 }
 
-func taskA() int {
+func equation(a, b, x float64) float64 {
+	return ((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+}
+
+func taskA(a, b, x float64) []float64 {
 	fmt.Println("Part A")
-	var x float64 = 1.23
-	var a float64 = 0.8
-	var b float64 = 0.4
+	var array []float64
 	for x <= 7.23 {
-		fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+		array = append(array, equation(a, b, x))
 		x = x + 1.2
 	}
-	return 0
+	return array
 }
 
-func taskB() int {
+func taskB(a, b float64) []float64 {
 	fmt.Println("Part B")
-	var a float64 = 0.8
-	var b float64 = 0.4
-
+	var array []float64
 	var x float64 = 1.88
-	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+	array = append(array, equation(a, b, x))
 
 	x = 2.26
-	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+	array = append(array, equation(a, b, x))
 
 	x = 3.84
-	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+	array = append(array, equation(a, b, x))
 
 	x = 4.55
-	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
+	array = append(array, equation(a, b, x))
 
 	x = -6.21
-	fmt.Println((math.Pow((x-a), 2/3) + math.Pow(math.Abs(x+b), 0.2)) / math.Pow((math.Pow(x, 2)-math.Pow((a+b), 2)), 1/9))
-	return 0
+	array = append(array, equation(a, b, x))
+	return array
 }
 
 func EvenOrOdd(number int) string {
