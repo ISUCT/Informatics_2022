@@ -1,26 +1,42 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-//Lab 24 Chukhlova V 1.42
+//HW Chukhlova V
+
+func EvenOrOdd(num int) {
+	if num%2 == 0 {
+		fmt.Println("Even")
+	} else {
+		fmt.Println("Odd")
+	}
+}
+
+func Sheeps(num []bool) {
+	var count = 0
+	for _, value := range num {
+		if value == true {
+			count++
+		}
+	}
+	fmt.Println(count)
+}
+
+func Paperworks(n int, m int) {
+	if n > 0 && m > 0 {
+		fmt.Println(n * m)
+	} else {
+		fmt.Println(0)
+	}
+}
+
+func Dragons(bullets int, dragons int) {
+	if bullets/dragons >= 2 {
+		fmt.Println("Yes")
+	} else {
+		fmt.Println("No")
+	}
+}
 
 func main() {
-	var a = 7.2
-	var b = 1.3
-	fmt.Println("Задание А")
-	for x := 1.56; x <= 4.71; x += 0.63 {
-		c := (a + (b * x)) / (math.Pow(math.Log10(x), 3))
-		y := math.Pow(c, (1 / 5.0))
-		fmt.Println("x = ", x, " ", "y = ", y)
-	}
-	var mass = [5]float64{2.4, 2.8, 3.9, 4.7, 3.16}
-	fmt.Println("Задание B")
-	for _, x1 := range mass {
-		c := (a + (b * x1)) / (math.Pow(math.Log10(x1), 3))
-		y1 := math.Pow(c, (1 / 5.0))
-		fmt.Println("x = ", x1, " ", "y = ", y1)
-	}
 }
