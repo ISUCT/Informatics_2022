@@ -45,8 +45,9 @@ func Paperwork(n, m int) int {
 func Hero(bullets, dragons int) bool {
 	if bullets/dragons >= 2 {
 		return true
+	} else {
+		return false
 	}
-	return false
 }
 
 // "Polish alphabet" #6
