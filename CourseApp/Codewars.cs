@@ -4,9 +4,56 @@
 
     public class Codewars
     {
-        public static int[] FindAll(int[] a, int n) => Enumerable.Range(0, a.Length).Where(i => a[i] == n).ToArray();
+        public static string EvenOrOdd(int number) // чётное или нечётное
+        {
+            return number % 2 == 0 ? "Even" : "Odd";
+        }
 
-        public static int SumOfMinimums(int[,] numbers)
+        public static int CountSheeps(bool[] sheeps) // овцы
+        {
+            int count = 0;
+            foreach (bool sheep in sheeps)
+            {
+                if (sheep == true)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public static int[] MonkeyCount(int n) // почситать обезьян
+        {
+            int elem = 1;
+            int[] mass = new int[n];
+            for (byte index = 0; index < mass.Length; index++)
+            {
+                if (elem <= n)
+                {
+                    mass[index] = elem++;
+                }
+            }
+
+            return mass;
+        }
+
+        public static int Paperwork(int n, int m) // посчитать количество страниц
+        {
+            int result = 0;
+            if (n > 0 && m > 0)
+            {
+                result = m * n;
+            }
+
+            return result;
+        }
+
+        public static bool Hero(int bullets, int dragons) => bullets / dragons >= 2; // драконы
+
+        public static int[] FindAll(int[] a, int n) => Enumerable.Range(0, a.Length).Where(i => a[i] == n).ToArray(); // индексы вхожддений
+
+        public static int SumOfMinimums(int[,] numbers) // сумма минимумов
         {
             var result = 0;
             for (int i = 0; i < numbers.GetLength(0); i++)
@@ -26,7 +73,7 @@
             return result;
         }
 
-        public static string PolishToEnglish(string sentence)
+        public static string PolishToEnglish(string sentence) // перевод польский на русский
         {
             char[] result = sentence.ToCharArray();
             char[] polish = new char[] { 'ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż' };
@@ -42,7 +89,7 @@
                 }
             }
 
-            return result.ToString();
+            return new string(result);
         }
     }
 }
