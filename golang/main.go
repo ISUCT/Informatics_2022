@@ -39,6 +39,14 @@ func main() {
 	fmt.Println(isHeroGonnaSurvive(2,1))
 	fmt.Println(isHeroGonnaSurvive(5,100))
 	fmt.Println(isHeroGonnaSurvive(100,5))
+
+	//codewars 6
+	numbers := []int { 6, 9, 3, 4, 3, 82, 11 }
+	fmt.Println(findAll(numbers, 3))
+
+	//codewars 7
+	array := [][]int { { 1, 2, 3, 4, 5 },{ 5, 6, 7, 8, 9 },{ 20, 21, 34, 56, 100 } }
+	fmt.Println(getSumOfMinimums(array))
 }
 
 //task 7
@@ -99,4 +107,30 @@ func countPages(n int, m int) int {
 func isHeroGonnaSurvive(bulletCount int, dragonCount int) bool {
 	var bulletCountToWinDragons = dragonCount * 2
 	return bulletCount >= bulletCountToWinDragons
+}
+
+//codewars 6
+func findAll(array []int, num int) []int {
+	indexes := []int {}
+	for i:=0; i < len(array); i++ {
+		if(array[i] == num) {
+			indexes = append(indexes, i)
+		}
+	}
+	return indexes
+}
+
+//codewars 7
+func getSumOfMinimums(array [][]int) int {
+	sumOfMinimums := 0
+	for i:=0; i<len(array); i++ {
+		min := 9999
+		for j:=0; j<len(array[i]); j++ {
+			if(array[i][j] < min) {
+				min = array[i][j]
+			}
+		}
+		sumOfMinimums += min
+	} 
+	return sumOfMinimums
 }
