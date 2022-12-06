@@ -12,6 +12,7 @@ def sum_of_minimums(numbers):
 #or
 def sof(n):
     return(sum(map(min, n)))
+print(sof([[4,5,2],[8,33,1],[87,323,16]]))
 
 
 #task3
@@ -21,7 +22,8 @@ list = []
 def find_all(list, x):
     l = len(list)
     result = []
-    for i in range(0, l):
+    for i in range(0,l):
         if x == list[i]:
             result.append(i)
     return result
+print(find_all([3,8,3,5,7,8],3))
