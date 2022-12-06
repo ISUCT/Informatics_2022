@@ -9,10 +9,7 @@ def sum_of_minimums(numbers):
     for i in numbers:
         result += min(i)
     return result
-#or
-def sof(n):
-    return(sum(map(min, n)))
-print(sof([[4,5,2],[8,33,1],[87,323,16]]))
+
 
 
 #task3
@@ -26,4 +23,10 @@ def find_all(list, x):
         if x == list[i]:
             result.append(i)
     return result
-print(find_all([3,8,3,5,7,8],3))
+
+if polish_letters == "main":
+    polish_letters()
+if sum_of_minimums == "main":
+    sum_of_minimums([5,46,35,3],[2,3,754],[234,432,4567,6543])
+if find_all == "main":
+    find_all([234,5432,24,34,24],24)

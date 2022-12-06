@@ -5,7 +5,7 @@ def even_or_odd(number):
         return "Even"
     else:
         return "Odd"
-even_or_odd(10)
+
 
 
 #task2
@@ -19,13 +19,13 @@ def monkey_count(n):
     for num in range(1, n + 1):
         result.append(num)
     return result
-monkey_count(10)
+
 
 
 #task4
 def paperwork(n, m):
     return n * m if n > 0 and m > 0 else 0 
-paperwork(10,16)
+
 
 
 #task5
@@ -35,4 +35,15 @@ def hero(b, d):
     return True
   else:
     return False
-hero(30,10)
+
+
+if even_or_odd == "main":
+    even_or_odd(23,33,22)
+if count_sheeps == "main":
+    count_sheeps([True,False,True,False])
+if monkey_count == "main":
+    monkey_count(33)
+if paperwork == "main":
+    paperwork(33,12)
+if hero == "main":
+    hero(12,89)
