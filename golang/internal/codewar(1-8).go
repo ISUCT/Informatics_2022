@@ -17,7 +17,7 @@ func EvenOrOdd(number int) string {
 func CountSheeps(numbers []bool) int {
 	var count = 0
 	for i := 0; i < len(numbers); i++ {
-		if numbers[i] == true {
+		if numbers[i] {
 			count++
 		}
 	}
