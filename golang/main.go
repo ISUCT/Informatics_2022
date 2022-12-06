@@ -26,6 +26,7 @@ func main() {
   fmt.Println(f(0.38))
   fmt.Println(f(0.43))
   fmt.Println(f(0.57))
+  fmt.Println(monkeyCount(3))
 } 
 //Codewars 
 //1
@@ -54,7 +55,6 @@ func monkeyCount(n int) []int {
   }
   return r
 }
-fmt.println(monkeyCount(3))
 //4 - невозможно решить, т.к отсутствует вариант этой задачи для Golang
 //5
 func Hero(bullets, dragons int) bool {
