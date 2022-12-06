@@ -27,3 +27,31 @@ func main() {
   fmt.Println(f(0.43))
   fmt.Println(f(0.57))
 } 
+//Codewars 
+//1
+func EvenOrOdd(number int) string {
+    if number%2 == {
+        return "Even"
+    } else {
+        return "Odd"
+    }
+}
+//2 
+func CountSheeps(numbers []bool) int {
+  var count = 0
+  for i:=0; i<len(numbers); i++ {
+    if(numbers[i] == true) {
+      count += 1
+      }
+    }
+    return count
+}
+//3
+func monkeyCount(n int) []int {
+  var r = []int{}
+  for i:= 1; i <= n; i++{
+    r = append (r, i)
+  }
+  return r
+}
+//4
