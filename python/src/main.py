@@ -1,4 +1,4 @@
-from codewars import find_all, even_or_odd, correct_polish_letters, count_sheeps, monkey_count, hero, paperwork, sum_of_minimums
+from codewars import *
 import math
 
 
