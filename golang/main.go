@@ -91,7 +91,7 @@ func CountSheeps(numbers []bool) int {
 	if numbers != nil {
 		var answer int = 0
 		for _, item := range numbers {
-			if item == true {
+			if item {
 				answer++
 			}
 		}
