@@ -169,7 +169,7 @@ func findAll(array []int, n int) []int {
 // sumOfMinimums
 func sumOfMinimums(numbers [][]int) int {
 	var result int = 0
-	var minimum int = 0
+	var minimum int
 	for _, i := range numbers {
 		minimum = i[0]
 		for _, j := range i {
