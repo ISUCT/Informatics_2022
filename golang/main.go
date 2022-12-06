@@ -22,6 +22,59 @@ func main() {
 	for _, element := range xValues {
 		Problem(a, b, element)
 	}
+
+	fmt.Printf("-------------------------------\n")
+	fmt.Printf("Codewars section\n")
+	fmt.Printf("-------------------------------\n")
+
+	fmt.Printf("Is hero survive?\n") // 1
+	fmt.Printf("bullets = 10, dragons = 5, result = %t\n", Hero(10, 5))
+	fmt.Printf("\n")
+
+	fmt.Printf("School Paperwork\n") // 2
+	fmt.Printf("n = 5, m = 5, result = %d\n", paperwork(5, 5))
+	fmt.Printf("n = -5, m = 5, result = %d\n", paperwork(-5, 5))
+	fmt.Printf("\n")
+
+	fmt.Printf("Count the Monkeys\n") // 3
+	fmt.Printf("n = 10, result = %v\n", monkeyCount(10))
+	fmt.Printf("\n")
+
+	fmt.Printf("Counting sheep\n") // 4
+	sheeps := []bool{
+		true, true, true, false,
+		true, true, true, true,
+		true, false, true, false,
+		true, false, false, true,
+		true, true, true, true,
+		false, false, true, true,
+	}
+	fmt.Printf("sheeps = %v, result = %v\n", sheeps, CountSheeps(sheeps))
+	fmt.Printf("\n")
+
+	fmt.Printf("Even or Odd\n") // 5
+	fmt.Printf("number = 2, result = %s\n", EvenOrOdd(2))
+	fmt.Printf("number = 3, result = %s\n", EvenOrOdd(3))
+	fmt.Printf("\n")
+
+	fmt.Printf("Sum of Minimums\n") // 6
+	arrayForSumMinimums := [][]int{
+		{1, 2, 3, 4, 5},
+		{5, 6, 7, 8, 9},
+		{20, 21, 34, 56, 100},
+	}
+	fmt.Printf("numbers = %v, result = %d\n", arrayForSumMinimums, sumOfMinimums(arrayForSumMinimums))
+	fmt.Printf("\n")
+
+	fmt.Printf("Find all occurrences of an element in an array\n") // 7
+	arrayForOccurrences := []int{
+		6, 9, 3, 4, 3, 82, 11,
+	}
+	fmt.Printf("numbers = %v, n = 3, result = %d\n", arrayForOccurrences, findAll(arrayForOccurrences, 3))
+	fmt.Printf("\n")
+
+	fmt.Printf("Polish alphabet\n") // 7
+	fmt.Printf("input = Jędrzej Błądziński, result = %s\n", correctPolishLetters("Jędrzej Błądziński"))
 }
 
 func Problem(a, b, x float64) {
