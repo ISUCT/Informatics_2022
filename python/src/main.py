@@ -1,4 +1,3 @@
-import math
 def summ(a: int, b:int) -> int:
     return a + b
 
@@ -8,6 +7,7 @@ if __name__ == "_main_":
     print(summ(3, 4))
 
 
+import math
 # Задача под А
 
 def y(x):
