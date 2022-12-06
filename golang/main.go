@@ -29,6 +29,8 @@ func main() {
 		fmt.Println(result)
 	}
 
+	fmt.Println("-----------CodeWar(1-8)-------------")
+
 	fmt.Println("Even or Odd №1:", internal.EvenOrOdd(10))
 
 	fmt.Println("Counting sheep №2:", internal.MonkeyCount(10))
@@ -40,8 +42,6 @@ func main() {
 		true, false, false, true,
 		true, true, true, true,
 		false, false, true, true}))
-
-	fmt.Println("-----------CodeWar(1-8)-------------")
 
 	fmt.Println("School Paperwork №4:", internal.Paperwork(5, 5))
 
