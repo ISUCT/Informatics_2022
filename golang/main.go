@@ -40,7 +40,7 @@ func EvenOrOdd(number int) string {
 func CountSheeps(numbers []bool) int {
   var count = 0
   for i:=0; i<len(numbers); i++ {
-    if(numbers[i] == true) {
+    if(numbers[i]) {
       count += 1
       }
     }
@@ -54,6 +54,7 @@ func monkeyCount(n int) []int {
   }
   return r
 }
+fmt.println(monkeyCount(3))
 //4 - невозможно решить, т.к отсутствует вариант этой задачи для Golang
 //5
 func Hero(bullets, dragons int) bool {
