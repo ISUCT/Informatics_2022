@@ -12,5 +12,4 @@ func narray(inpsl []int, n int) []int { //Я не знаю, как переда�
 	} else {
 		return []int{0}
 	}
-
 }
