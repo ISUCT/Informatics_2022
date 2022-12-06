@@ -34,6 +34,8 @@ package main
 import (
 	"fmt"
 	"math"
+
+	"isuct.ru/informatics2022/internal"
 )
 
 func Formula(x float64, a float64, b float64) float64 {
@@ -64,4 +66,5 @@ func main() {
 
 	fmt.Println(TaskA(a, b, xn, xk, xd))
 	fmt.Println(TaskB(a, b, []float64{1.9, 2.15, 2.34, 2.73, 3.16}))
+	fmt.Println(internal.EvenOdd(666))
 }

@@ -1,5 +1,9 @@
 package internal
 
-func Summ(a, b int) int {
-	return a + b
+func EvenOdd(a int) string {
+	if a%2 == 0 {
+		return "Even"
+	} else {
+		return "Odd"
+	}
 }
