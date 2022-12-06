@@ -8,7 +8,6 @@ import (
 func main() {
 	fmt.Println(taskA(0.8, 0.4, 1.23))
 	fmt.Println(taskB(0.8, 0.4))
-
 }
 
 func equation(a, b, x float64) float64 {
