@@ -54,4 +54,8 @@ func monkeyCount(n int) []int {
   }
   return r
 }
-//4
+//4 - невозможно решить, т.к отсутствует вариант этой задачи для Golang
+//5
+func Hero(bullets, dragons int) bool {
+  return bullets >= dragons * 2
+}
