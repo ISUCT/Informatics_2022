@@ -1,24 +1,29 @@
 import math
-i = 0
-def frange(start, stop, step):
-    i = start
-    while i < stop:
-        yield i
-        i += step
+def summ(a: int, b:int) -> int:
+    return a + b
 
+
+if __name__ == "_main_":
+    print("Hello World")
+    print(summ(3, 4))
+
+
+# Задача под А
 
 def y(x):
-    y = ((math.log(a + x)) / ((a + x) ** 2))
+    y = ((math.log(a + x))/((a + x) ** 2))
     return y
 
 
-for x in frange(1.2, 4.2, 0.6):
+x = 1.2
+X = 4.2
+while x < X:
     a = 2.0
     print(y(x))
-print()
-xrange = [1.16, 1.32, 1.47, 1.65, 1.93]
-xlen = len(xrange)
-for i in range(0, xlen):
-    x = xrange[i]
-    a = 2.0
-    print(y(x))
+    x += 0.6
+
+# Задача под B
+A = [1.16, 1.32, 1.47, 1.65, 1.93]
+a = 2.0
+for x in A:
+    print (y(x))
