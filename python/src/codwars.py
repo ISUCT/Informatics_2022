@@ -25,7 +25,7 @@ def paperwork(n: int, m: int):
 
 
 def hero(bullets: int, dragons: int):
-    if (bullets // dragons >= 2):
+    if bullets // dragons >= 2:
         return True
     else:
         return False
