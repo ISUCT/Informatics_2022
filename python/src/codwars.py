@@ -36,14 +36,6 @@ def correct_polish_letters(st):
     return (st)
 
 
-def correct_polish_letters(st):
-    l = "ąćęłńóśźż"
-    lt = "acelnoszz"
-    for i in range(len(l)):
-        st = st.replace(l[i], lt[i])
-    return st
-
-
 def find_all(array: list, n: int):
     c = []
     for i in range(len(array)):
