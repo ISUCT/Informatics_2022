@@ -2,7 +2,7 @@ package internal
 
 import "sort"
 
-func Even_or_odd(x int) (answer string) {
+func EvenOrOdd(x int) (answer string) {
 	if (x % 2) == 0 {
 		answer = "Even"
 	} else {
@@ -14,14 +14,14 @@ func Even_or_odd(x int) (answer string) {
 func Sheep(sheep []bool) (answer int) {
 	answer = 0
 	for _, value := range sheep {
-		if value == true {
+		if value {
 			answer += 1
 		}
 	}
 	return
 }
 
-func Count_with_son(number int) (answer []int) {
+func CountWithSon(number int) (answer []int) {
 	for i := 1; i <= number; i++ {
 		answer = append(answer, i)
 	}
@@ -37,7 +37,7 @@ func School(n, m int) (answer int) {
 	return
 }
 
-func Lucky_hero(bullets, dragons int) (answer bool) {
+func LuckyHero(bullets, dragons int) (answer bool) {
 	if float32(bullets/2.0) >= float32(dragons) {
 		answer = true
 	} else {
@@ -46,7 +46,7 @@ func Lucky_hero(bullets, dragons int) (answer bool) {
 	return
 }
 
-func Pol_to_eng(message string) (answer string) {
+func PolToEng(message string) (answer string) {
 	var alphabet = map[string]string{
 		"ą": "a",
 		"ć": "c",
@@ -68,7 +68,7 @@ func Pol_to_eng(message string) (answer string) {
 	return
 }
 
-func Find_all(arr []int, k int) (answer []int) {
+func FindAll(arr []int, k int) (answer []int) {
 	for index, value := range arr {
 		if value == k {
 			answer = append(answer, index)
@@ -77,7 +77,7 @@ func Find_all(arr []int, k int) (answer []int) {
 	return
 }
 
-func Only_min(arr [][]int) (answer int) {
+func OnlyMin(arr [][]int) (answer int) {
 	for _, n_1 := range arr {
 		sort.Ints(n_1[:])
 		answer += n_1[0]
