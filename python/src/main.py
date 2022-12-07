@@ -1,10 +1,6 @@
 import math
 
 
-
-
-
-
 def lab_var_22_1(a: float, x_s: float, x_e: float, step: float):
     y = None
     while x_s <= x_e:
@@ -31,5 +27,3 @@ else:
     print('zadanie 2')
 
     lab_var_22_2([4.48, 3.56, 2.78, 5.28, 3.21], 2.25)
-
-
