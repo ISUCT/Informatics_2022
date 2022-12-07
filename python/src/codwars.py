@@ -21,7 +21,7 @@ def paperwork(n: int, m: int):
     if n <= 0 or m <= 0:
         return 0
     else:
-        return (m * n)
+        return m * n
 
 
 def hero(bullets: int, dragons: int):
