@@ -2,36 +2,19 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal"
 )
 
 func main() {
-	const (
-		A float64 = 2.5
-		B float64 = 4.6
-	)
-	fmt.Println("Вывод задачи А по формуле 18:")
-	task_a(A, B, 1.1, 3.6, 0.5)
-	fmt.Println("Вывод задачи B по формуле 18:")
-	variables := [5]float64{1.2, 1.28, 1.36, 1.46, 2.35}
-	task_b(A, B, variables[:])
-}
-
-func task_a(a, b, xn, xk, dx float64) {
-	for x := xn; x <= xk; x += dx {
-		answer := formula18(a, b, x)
-		fmt.Println(answer)
-	}
-}
-
-func task_b(a, b float64, xs []float64) {
-	for _, x := range xs {
-		answer := formula18(a, b, x)
-		fmt.Println(answer)
-	}
-}
-
-func formula18(a, b, x float64) float64 {
-	answer := math.Pow((a+b*x), 2.5) / (1 + math.Log10(a+b*x))
-	return answer
+	fmt.Println("Even or odd:", internal.EvenOrOdd(10))
+	fmt.Println("Counting sheep:", internal.Sheep([]bool{
+		true, true, true, false, false, true, true,
+	}))
+	fmt.Println("Monkey count:", internal.CountWithSon(15))
+	fmt.Println("School:", internal.School(5, 5))
+	fmt.Println("Hero:", internal.LuckyHero(9, 4))
+	fmt.Println("Polish messages:", internal.PolToEng("Jędrzej Błądziński"))
+	fmt.Println("7:", internal.FindAll([]int{6, 9, 3, 4, 3, 82, 4}, 3))
+	fmt.Println("8:", internal.OnlyMin([][]int{{1, 2, 3, 4, 5}, {5, 6, 7, 8, 9}, {20, 21, 35, 56, 100}}))
 }
