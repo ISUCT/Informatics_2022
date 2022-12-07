@@ -1,5 +1,6 @@
 namespace CourseApp.Tests
 {
+    using CourceApp;
     using Xunit;
 
     public class DemoTest
@@ -7,7 +8,8 @@ namespace CourseApp.Tests
         [Fact]
         public void Test1()
         {
-            Assert.True(true);
+            var taskAMass = Task.TaskA(1.28, 3.28, 0.4);
+            Assert.Equal(6, taskAMass.Count);
         }
     }
 }
