@@ -61,7 +61,7 @@ def hero(bullets, dragons):
         return True
     else:
         return False
-    
+
 
 def correct_polish_letters(st):
     polish = 'ąćęłńóśźż'
