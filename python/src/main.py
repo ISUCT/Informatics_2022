@@ -63,6 +63,29 @@ def hero(bullets, dragons):
         return False
 
 
+def correct_polish_letters(st):
+    polish = 'ąćęłńóśźż'
+    normal = 'acelnoszz'
+    for n in range(len(polish)):
+        st = st.replace(polish[n], normal[n])
+    return st
+
+
+def find_all(array, n):
+    answer = []
+    for x in range(len(array)):
+        if array[x] == n:
+            answer.append(x)
+    return answer
+
+
+def sum_of_minimums(numbers):
+    answer = 0
+    for n in numbers:
+        answer += min(n)
+    return answer
+
+
 if __name__ == "__main__":
     print("Hello world")
     print(summ(3, 4))
