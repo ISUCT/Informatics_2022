@@ -15,7 +15,7 @@ func EvenOrOdd(num int) {
 func Sheeps(num []bool) {
 	var count = 0
 	for _, value := range num {
-		if value == true {
+		if value {
 			count++
 		}
 	}
