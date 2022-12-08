@@ -55,6 +55,18 @@ func monkeyCount(n int) []int {
   }
   return r
 }
+//4 
+func paperwork(n, m int) (fin int) {
+	if n < 0 || m < 0 || n < 0 && m < 0 {
+		fin = 0
+	} else {
+		fin = m * n
+	}
+	return
+}
+func main() {
+	fmt.Println(paperwork(4, 5))
+}
 //5
 func Hero(bullets, dragons int) bool {
   return bullets >= dragons * 2
