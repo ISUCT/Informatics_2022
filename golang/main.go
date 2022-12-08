@@ -27,6 +27,7 @@ func main() {
   fmt.Println(f(0.43))
   fmt.Println(f(0.57))
   fmt.Println(monkeyCount(3))
+  fmt.Println(paperwork(4, 5))
 } 
 //Codewars 
 //1
@@ -64,9 +65,7 @@ func paperwork(n, m int) (fin int) {
 	}
 	return
 }
-func main() {
-	fmt.Println(paperwork(4, 5))
-}
+
 //5
 func Hero(bullets, dragons int) bool {
   return bullets >= dragons * 2
