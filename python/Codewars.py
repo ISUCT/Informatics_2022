@@ -4,4 +4,4 @@ def paperwork(n, m):
         return 0
     else:
         return m*n
-println(paperwork(5, 2))
+print(paperwork(5, 2))
