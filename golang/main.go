@@ -26,4 +26,47 @@ func main() {
   fmt.Println(f(0.38))
   fmt.Println(f(0.43))
   fmt.Println(f(0.57))
+  fmt.Println(monkeyCount(3))
+  fmt.Println(paperwork(4, 5))
 } 
+//Codewars 
+//1
+func EvenOrOdd(number int) string {
+    if number%2 == 0{
+        return "Even"
+    } else {
+        return "Odd"
+    }
+}
+//2 
+func CountSheeps(numbers []bool) int {
+  var count = 0
+  for i:=0; i<len(numbers); i++ {
+    if(numbers[i]) {
+      count += 1
+      }
+    }
+    return count
+}
+//3
+func monkeyCount(n int) []int {
+  var r = []int{}
+  for i:= 1; i <= n; i++{
+    r = append (r, i)
+  }
+  return r
+}
+//4 
+func paperwork(n, m int) (fin int) {
+	if n < 0 || m < 0 || n < 0 && m < 0 {
+		fin = 0
+	} else {
+		fin = m * n
+	}
+	return
+}
+
+//5
+func Hero(bullets, dragons int) bool {
+  return bullets >= dragons * 2
+}
