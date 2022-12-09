@@ -9,9 +9,9 @@ func main() {
 	const a float64 = 2.0
 	const b float64 = 1.1
 	// Задание А
-	task1(a, b)
+	task1(0.08, 0.2, 1.08, a, b)
 	//Задание Б
-	fmt.Println(task2(a, b))
+	task2([]float64{0.1, 0.3, 0.4, 0.45, 0.65}, a, b)
 	// CodeWars 1
 	fmt.Println(evenorodd(10))
 	// CodeWars 2
@@ -24,6 +24,7 @@ func main() {
 	fmt.Println(countingpaper(10, 10))
 	//CodeWars 5
 	fmt.Println(Ishegonnasurvive(20, 10))
+	//CodeWars 6
 }
 
 func formula(x float64, a float64, b float64) float64 {
@@ -31,18 +32,20 @@ func formula(x float64, a float64, b float64) float64 {
 	return y
 }
 
-func task1(a float64, b float64) {
+func task1(xn float64, xd float64, xk float64, a float64, b float64) {
 	fmt.Println("Задание А")
-	var x float64 = 0.08
-	for ; x < 1.08; x = x + 0.2 {
+	var x float64 = xn
+	for ; x < xk; x = x + xd {
 		fmt.Println(formula(x, a, b))
 	}
 }
 
-func task2(a float64, b float64) [5]float64 {
+func task2(Massiv []float64, a float64, b float64) {
 	fmt.Println("Задание В")
-	var Massiv = [5]float64{formula(0.1, a, b), formula(0.3, a, b), formula(0.4, a, b), formula(0.45, a, b), formula(0.65, a, b)}
-	return Massiv
+	for i := 0; i < 5; i++ {
+		Massiv[i] = formula(Massiv[i], a, b)
+	}
+	fmt.Println(Massiv)
 }
 func evenorodd(num int) string {
 	fmt.Println(" CodeWars 'Even or Odd?'")
