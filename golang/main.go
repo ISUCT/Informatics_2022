@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 	"math"
+	"sort"
+	"strings"
 )
 
 func main() {
 	fmt.Println(taskA(0.8, 0.4, 1.23))
 	fmt.Println(taskB(0.8, 0.4))
+	fmt.Println(sum_of_minimums([][]int{{1, 2, 3, 3}, {1, 2, 3, 4, 5}, {1, 3, 4, 5}}))
 }
 
 func equation(a, b, x float64) float64 {
@@ -88,4 +91,37 @@ func Hero(bullets, dragons int) bool {
 	} else {
 		return false
 	}
+}
+
+func correctPolishLetters(st string) string {
+	st = strings.Replace(st, "ą", "a", -1)
+	st = strings.Replace(st, "ć", "c", -1)
+	st = strings.Replace(st, "ę", "e", -1)
+	st = strings.Replace(st, "ł", "l", -1)
+	st = strings.Replace(st, "ń", "n", -1)
+	st = strings.Replace(st, "ó", "o", -1)
+	st = strings.Replace(st, "ś", "s", -1)
+	st = strings.Replace(st, "ź", "z", -1)
+	st = strings.Replace(st, "ż", "z", -1)
+
+	return st
+}
+
+func find_all(array []int, n int) []int {
+	var indexes []int
+	for i := 0; i < len(array); i++ {
+		if array[i] == n {
+			indexes = append(indexes, i)
+		}
+	}
+	return indexes
+}
+
+func sum_of_minimums(numbers [][]int) int {
+	result := 0
+	for _, i := range numbers {
+		sort.Ints(i)
+		result += i[0]
+	}
+	return result
 }
