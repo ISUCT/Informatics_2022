@@ -10,23 +10,32 @@ func CheckForError(err error) {
 	}
 }
 
+func InitializeGrid(width, height int) [][]string {
+	grid := make([][]string, height)
+	for i := 0; i < width; i++ {
+		grid[i] = make([]string, width)
+	}
+	return grid
+}
+
 // Возвращает координаты соседних клеток
-func GetCoordinatesOfNeighborCells(row, column, width, height int) (coords [][]int) {
-	var coordinatesOfNeighborCells = [][]int{
+func GetCoordinatesOfNeighborCells(row, column, width, height int) (inBoundsCoordinates [][]int) {
+	var allPossibleCoordinates = [][]int{
 		{row + 1, column}, {row, column + 1}, {row + 1, column + 1},
 		{row - 1, column}, {row, column - 1}, {row - 1, column - 1},
 		{row + 1, column - 1}, {row - 1, column + 1},
 	}
 	// Проверка на выход за пределы слайса
-	for _, coordinates := range coordinatesOfNeighborCells {
+	for _, coordinates := range allPossibleCoordinates {
 		w, h := coordinates[0], coordinates[1]
 		if (h < 0 || h > height-1) || (w < 0 || w > width-1) {
 			continue
 		} else {
-			coords = append(coords, coordinates)
+			// Если координаты не указывают на элемент за пределами слайса, то добавляем их в inBoundsCoordinates
+			inBoundsCoordinates = append(inBoundsCoordinates, coordinates)
 		}
 	}
-	return coords
+	return inBoundsCoordinates
 }
 
 // Возвращает количество живых клеток среди соседних
@@ -49,6 +58,7 @@ func MakeASimulationStep(grid, secondGrid [][]string, width, height int) {
 			} else if (grid[i][j] == "#") && (alive == 2 || alive == 3) {
 				secondGrid[i][j] = "#"
 			} else {
+				// Все символы, кроме #, будут интерпретироваться как точка
 				secondGrid[i][j] = "."
 			}
 		}
