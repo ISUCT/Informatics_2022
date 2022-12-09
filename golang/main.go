@@ -11,6 +11,8 @@ func main() {
 	fmt.Println(taskA(0.8, 0.4, 1.23))
 	fmt.Println(taskB(0.8, 0.4))
 	fmt.Println(sum_of_minimums([][]int{{1, 2, 3, 3}, {1, 2, 3, 4, 5}, {1, 3, 4, 5}}))
+	fmt.Println(find_all([]int{1, 2, 3, 1, 4, 1, 5}, 1))
+	fmt.Println(correctPolishLetters("ąviątióń"))
 }
 
 func equation(a, b, x float64) float64 {
@@ -103,7 +105,6 @@ func correctPolishLetters(st string) string {
 	st = strings.Replace(st, "ś", "s", -1)
 	st = strings.Replace(st, "ź", "z", -1)
 	st = strings.Replace(st, "ż", "z", -1)
-
 	return st
 }
 
