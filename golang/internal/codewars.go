@@ -1,6 +1,9 @@
 package internal
 
-import "math"
+import (
+	"math"
+	"strings"
+)
 
 func EvenOrOdd(num int64) string {
 	if num%2 == 0 {
@@ -41,23 +44,24 @@ func IsHe(bullets int, dragons int) string {
 	}
 }
 
-//ПОЛЬСКАЯ КОРОВА НЕ ХОЧЕТ ТАНЦЕВАТЬ
-/*func Polish(text string) []string {
-	var res []string
-	var vowels string = "ąćęłńóśźż"
-	var standarts string = "acelnoszz"
-	for i := 0; i < (len(text)); i++ {
-		for k := 0; k < (len(vowels)); k++ {
-			if text[i] == vowels[k] {
-				res[i] = string(standarts[k])
-			} else {
-				res[i] = string(text[i])
-			}
-		}
+// ПОЛЬСКАЯ КОРОВА ЗАХОТЕЛА
+func Polish(text string) string {
+	var changing [][]string = [][]string{
+		{"ą", "a"},
+		{"ć", "c"},
+		{"ę", "e"},
+		{"ł", "l"},
+		{"ń", "n"},
+		{"ó", "o"},
+		{"ś", "s"},
+		{"ź", "z"},
+		{"ż", "z"},
 	}
-	return res
+	for i := 0; i < len(changing); i++ {
+		text = strings.Replace(text, changing[i][0], changing[i][1], 1)
+	}
+	return text
 }
-*/
 func FindAll(arrFa []int, n int) []int {
 	var res []int
 	for i := 0; i < len(arrFa); i++ {
