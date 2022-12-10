@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// Считывание слайса с клавиатуры
 func ReadUserInput(width, height int, grid [][]string) {
 	reader := bufio.NewReader(os.Stdin)
 	for i := 0; i < height; i++ {

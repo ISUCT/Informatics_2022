@@ -1,7 +1,6 @@
 package internal_test
 
 import (
-	_ "errors"
 	"fmt"
 	"testing"
 
