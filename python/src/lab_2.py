@@ -31,3 +31,4 @@ xlen = len(xlist)
 for i in range(0, xlen):
     x = xlist[i]
     print(B(x))
+
