@@ -1,11 +1,3 @@
-#task1
-if number % 2 == 0: 
-        return "Even" 
-    else: 
-        return "Odd" 
-even_or_odd(10) 
- 
- 
 #task2 
 def count_sheeps(sheep): 
     return sheep.count(True) 
