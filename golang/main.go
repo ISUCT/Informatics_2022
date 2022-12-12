@@ -18,6 +18,7 @@ func main() {
 	fmt.Println(TaskA(a, nx, kx, dx))
 	fmt.Println("___Задание В___")
 	fmt.Println(TaskB(a, masB))
+	fmt.Println("___Задачи с CodeWars___")
 
 	// Задача с Четное-Нечетное
 	fmt.Println(internal.EvenOdd(1703))
@@ -29,6 +30,20 @@ func main() {
 	fmt.Println(internal.Printer(5, 2))
 	// Драконы
 	fmt.Println(internal.Dragons(5, 2))
+
+	// Польский Алфавит
+	fmt.Println(internal.PolisAlphabet("Gdzie jest biały węgorz?"))
+
+	//FindAll
+	fmt.Println(internal.FindAll([]int{3, 4, 2, 5, 4, 1, 76, 65, 3, 5, 4, 5, 2, 3}, 3))
+
+	// Сумма минимальных чисел
+	var numbersArr = [][]int{
+		{1, 2, 3, 4, 5},
+		{5, 6, 7, 8, 9},
+		{20, 21, 34, 56, 100},
+	}
+	fmt.Println(internal.SumMin(numbersArr, 3, 5))
 }
 
 func TaskA(a, nx, kx, dx float64) []float64 {
