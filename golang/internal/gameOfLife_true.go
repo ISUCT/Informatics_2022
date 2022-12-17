@@ -28,11 +28,21 @@ func printGrid(width int, height int, grid [][]byte, step int) [][]byte {
 }
 
 func GameOfLifeStep(width int, height int, grid [][]byte) [][]byte {
+	nb_grid := [][]int{
+		{-1, -1},
+		{-1, 0},
+		{-1, 1},
+		{0, -1},
+		{0, 1},
+		{1, -1},
+		{1, 0},
+		{1, 1},
+	}
 	var PosX int = 0
 	var PosY int = 1
 	var nb int
 	var overwrite_pos [][]int
-	for i := 1; i <= width*height; i++ {
+	for i := 0; i < width*height; i++ {
 		PosX++
 		if PosX > width {
 			PosY++
@@ -40,27 +50,16 @@ func GameOfLifeStep(width int, height int, grid [][]byte) [][]byte {
 				PosY = 0
 			}
 			PosX = 1
-			fmt.Println()
 		}
-		nb_grid := [][]int{
-			{-1, 1},
-			{-1, 0},
-			{-1, 1},
-			{0, -1},
-			{0, 1},
-			{1, -1},
-			{1, 0},
-			{1, 1},
-		}
-		for i := 0; i < len(nb_grid); i++ {
-			if grid[PosX+nb_grid[i][0]][PosY+nb_grid[i][1]] == byte(1) {
+		for ia := 0; ia < len(nb_grid); ia++ {
+			if grid[PosX+nb_grid[ia][0]][PosY+nb_grid[ia][1]] == 1 {
 				nb++
 			}
 		}
-		if grid[PosX][PosY] == byte(0) && nb == 3 {
+		if grid[PosX][PosY] == 0 && nb == 3 {
 			overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 1})
 		} else {
-			if grid[PosX][PosY] == byte(1) && nb == 3 || nb == 2 {
+			if grid[PosX][PosY] == 1 && (nb == 3 || nb == 2) {
 				overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 1})
 			} else {
 				overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 0})
@@ -69,8 +68,8 @@ func GameOfLifeStep(width int, height int, grid [][]byte) [][]byte {
 		nb = 0
 	}
 
-	for oi := 0; oi < len(overwrite_pos); oi++ {
-		grid[overwrite_pos[oi][0]][overwrite_pos[oi][1]] = byte(overwrite_pos[oi][2])
+	for ib := 0; ib < len(overwrite_pos); ib++ {
+		grid[overwrite_pos[ib][0]][overwrite_pos[ib][1]] = byte(overwrite_pos[ib][2])
 	}
 	return grid
 }

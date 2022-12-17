@@ -53,5 +53,5 @@ func main() {
 
 	fmt.Println(internal.SumOfMin(exampleArr, 3, 5))
 
-	internal.GameOfLife(1, 5, 5, sample_grid)
+	internal.GameOfLife(5, 5, 5, sample_grid)
 }
