@@ -14,7 +14,7 @@ func main() {
 		fmt.Println(numAResults[i])
 	}
 	fmt.Println("Mass")
-	digit := [5]float64{4.48, 3.56, 2.78, 5.28, 3.21}
+	digit := []float64{4.48, 3.56, 2.78, 5.28, 3.21}
 	Mass(0.4, 0.8, digit)
 
 }
@@ -29,8 +29,10 @@ func numA(a float64, b float64, xn float64, xk float64, xd float64) []float64 {
 	}
 	return array
 }
-func Mass(a float64, b float64, digit [5]float64) {
+func Mass(a float64, b float64, digit []float64) {
 	for i := 0; i < len(digit); i++ {
 		fmt.Println(lab(a, b, digit[i]))
 	}
+
+}
 }
