@@ -16,16 +16,12 @@ func printSlice(grid [][]string, width, height int) {
 }
 
 func main() {
-	// n - width, m - height of a grid, s - steps
-	fmt.Println("s, n, m")
+	// s - steps, n and m - width and height of a grid
 	var s, n, m int
 	_, err := fmt.Scanln(&s, &n, &m) // Для упрощения кода s, n и m вводятся на одной строке
 	internal.CheckForError(err)
 
-	// Иницилиализация двумерного поля
 	grid := internal.InitializeGrid(n, m)
-
-	// Заполнение двумерного слайса grid с клавиатуры
 	internal.ReadUserInput(n, m, grid)
 
 	secondGrid := internal.InitializeGrid(n, m)

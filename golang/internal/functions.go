@@ -18,7 +18,6 @@ func InitializeGrid(width, height int) [][]string {
 	return grid
 }
 
-// Возвращает координаты соседних клеток
 func GetCoordinatesOfNeighborCells(row, column, width, height int) (inBoundsCoordinates [][]int) {
 	var allPossibleCoordinates = [][]int{
 		{row + 1, column}, {row, column + 1}, {row + 1, column + 1},
@@ -38,7 +37,6 @@ func GetCoordinatesOfNeighborCells(row, column, width, height int) (inBoundsCoor
 	return inBoundsCoordinates
 }
 
-// Возвращает количество живых клеток среди соседних
 func CountAliveCells(grid [][]string, coordinatesOfNeighborCells [][]int) (alive int) {
 	for _, coords := range coordinatesOfNeighborCells {
 		i, j := coords[0], coords[1]
