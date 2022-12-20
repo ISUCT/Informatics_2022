@@ -113,27 +113,27 @@ func polishalphabet(s string) string {
 	fmt.Println("CodeWars №6 Polish alphabet")
 	var fstr string
 	var flag bool = true
-	var upengalphabet = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
-	var lowerengalphabet = []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
+	var up = []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+	var lower = []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
 	var falsesigh = []string{"ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż", " "}
 	var truesigh = []string{"a", "c", "e", "l", "n", "o", "s", "z", "z", " "}
 	var strmassiv = strings.Split(s, "")
 	//Проверка регистра
 	for d := 0; d < len(strmassiv); d++ {
-		for uplower := 0; uplower < len(upengalphabet); uplower++ {
-			if strmassiv[d] == upengalphabet[uplower] {
-				strmassiv[d] = lowerengalphabet[uplower]
+		for uplower := 0; uplower < len(up); uplower++ {
+			if strmassiv[d] == up[uplower] {
+				strmassiv[d] = lower[uplower]
 			}
 		}
 	}
 	//Исправление символов
 	for i := 0; i < len(strmassiv); i++ {
-		for eng := 0; eng < len(lowerengalphabet); eng++ {
-			if strmassiv[i] == lowerengalphabet[eng] {
+		for eng := 0; eng < len(lower); eng++ {
+			if strmassiv[i] == lower[eng] {
 				flag = false
 			}
 		}
-		if flag == true {
+		if flag {
 			for sigh := 0; sigh < len(falsesigh); sigh++ {
 				if strmassiv[i] == falsesigh[sigh] {
 					fstr = fstr + truesigh[sigh]
