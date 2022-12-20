@@ -41,5 +41,3 @@ func ZadanieB(a float64, b float64, c int64) {
 		fmt.Println(y)
 	}
 }
-
-// https://youtu.be/diioRPYBL9k
