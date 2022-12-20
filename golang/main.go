@@ -86,7 +86,7 @@ func countingsheep(fold []bool) int {
 // Задача 3
 
 func countthemonkeys(quantity int) []int {
-	fmt.Println("CodeWars №3 'Count the Monkey!'")
+	fmt.Println("Задание №3 'Count the Monkey!'")
 	quantitymonkey := []int{}
 	for i := 1; i < quantity+1; i++ {
 		quantitymonkey = append(quantitymonkey, i)
@@ -97,7 +97,7 @@ func countthemonkeys(quantity int) []int {
 // Задание 4
 
 func countingpaper(n int, m int) int {
-	fmt.Println("CodeWars №4 'Beginner Series #1 School Paperwork'")
+	fmt.Println("Задание №4 'Beginner Series #1 School Paperwork'")
 	if n < 0 || m < 0 {
 		return 0
 	} else {
@@ -172,7 +172,7 @@ func findelement(arraynum []int, num int) []int {
 // Задание 8
 
 func sumofminimums(numarray [][]int) int {
-	fmt.Println("CodeWars №8 'Sum of Minimums!'")
+	fmt.Println("Задание №8 'Sum of Minimums!'")
 	var sumnum int = 0
 	for i := 0; i < len(numarray); i++ {
 		var minnum int
