@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	//ZadanieA(1.35, 0.98, 4.24, 1.14)
-	//ZadanieB(1.35, 0.98, 0)
+	ZadanieA(1.35, 0.98, 4.24, 1.14)
+	ZadanieB(1.35, 0.98, 0)
 	internal.EvenOrOdd(4)
 	internal.CountingSheep([]bool{true, true, true, false,
 		true, true, true, true,
