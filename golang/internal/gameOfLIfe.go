@@ -61,7 +61,6 @@ func gol_Step(grid [][]byte) [][]byte {
 				} else {
 					overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 0})
 				}
-
 			}
 		}
 	}
