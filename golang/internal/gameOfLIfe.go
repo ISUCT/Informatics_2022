@@ -1,6 +1,8 @@
 package internal
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func printGrid(grid [][]byte, step int) [][]byte {
 	fmt.Println("Step ", step)
@@ -23,6 +25,9 @@ func printGrid(grid [][]byte, step int) [][]byte {
 }
 
 func GameOfLife(grid [][]byte, step int) {
+	if !(isGridCorrect(grid)) {
+		fmt.Println("Grid check failed")
+	}
 	for i := 1; i <= step; i++ {
 		printGrid(gol_Step(grid), i)
 	}
@@ -68,4 +73,18 @@ func gol_Step(grid [][]byte) [][]byte {
 		grid[overwrite_pos[ow_c][0]][overwrite_pos[ow_c][1]] = byte(overwrite_pos[ow_c][2])
 	}
 	return grid
+}
+
+func isGridCorrect(grid [][]byte) bool {
+	for i := 0; i < len(grid[0])-1; i++ {
+		if grid[0][i] != byte(3) && grid[len(grid)][i] != byte(3) {
+			return false
+		}
+	}
+	for t := 1; t < len(grid[1])-2; t++ {
+		if grid[t][0] != byte(3) && grid[t][len(grid[0])] != byte(3) && len(grid[0]) == len(grid[t]) {
+			return false
+		}
+	}
+	return true
 }
