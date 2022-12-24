@@ -77,12 +77,12 @@ func gol_Step(grid [][]byte) [][]byte {
 
 func isGridCorrect(grid [][]byte) bool {
 	for i := 0; i < len(grid[0])-1; i++ {
-		if grid[0][i] != byte(3) && grid[len(grid)][i] != byte(3) {
+		if grid[0][i] != byte(3) && grid[len(grid)-1][i] != byte(3) {
 			return false
 		}
 	}
 	for t := 1; t < len(grid[1])-2; t++ {
-		if grid[t][0] != byte(3) && grid[t][len(grid[0])] != byte(3) && len(grid[0]) == len(grid[t]) {
+		if grid[t][0] != byte(3) && grid[t][len(grid[0])-1] != byte(3) && len(grid[0]) == len(grid[t]) {
 			return false
 		}
 	}
