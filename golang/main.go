@@ -25,13 +25,13 @@ func main() {
 	fmt.Println(internal.HeroWithGunShootsDragons(37, 20))
 
 	sample_grid := [][]byte{
-		{2, 2, 2, 2, 2, 2, 2, 2},
-		{2, 0, 0, 0, 0, 0, 0, 2},
-		{2, 0, 0, 1, 0, 0, 0, 2},
-		{2, 1, 0, 1, 0, 0, 0, 2},
-		{2, 0, 1, 1, 0, 0, 0, 2},
-		{2, 0, 0, 0, 0, 0, 0, 2},
-		{2, 2, 2, 2, 2, 2, 0, 2},
+		{2, 2, 2, 2, 2, 2, 2},
+		{2, 0, 0, 0, 0, 0, 2},
+		{2, 0, 0, 1, 0, 0, 2},
+		{2, 1, 0, 1, 0, 0, 2},
+		{2, 0, 1, 1, 0, 0, 2},
+		{2, 0, 0, 0, 0, 0, 2},
+		{2, 2, 2, 2, 2, 2, 2},
 	}
 
 	fmt.Println(internal.PolishCow("Gdzie jest biały węgorz?"))
@@ -53,5 +53,5 @@ func main() {
 
 	fmt.Println(internal.SumOfMin(exampleArr, 3, 5))
 
-	internal.GameOfLife(4, 6, 5, sample_grid)
+	internal.GameOfLife(sample_grid, 4)
 }
