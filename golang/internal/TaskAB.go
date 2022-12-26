@@ -5,7 +5,9 @@ import (
 	"math"
 )
 
-func TestAB(a float64, b float64) {
+func TestAB() {
+	const a float64 = 2.0
+	const b float64 = 1.1
 	Task1(0.08, 0.2, 1.08, a, b)
 	Task2([]float64{0.1, 0.3, 0.4, 0.45, 0.65}, a, b)
 }
@@ -18,7 +20,7 @@ func formula(x float64, a float64, b float64) float64 {
 
 // Задание А
 func Task1(xn float64, xd float64, xk float64, a float64, b float64) {
-	fmt.Println("Задание А")
+	fmt.Println("Задание A")
 	var x float64 = xn
 	for ; x < xk; x = x + xd {
 		fmt.Println(formula(x, a, b))
@@ -27,7 +29,7 @@ func Task1(xn float64, xd float64, xk float64, a float64, b float64) {
 
 // Задание Б
 func Task2(Massiv []float64, a float64, b float64) {
-	fmt.Println("Задание В")
+	fmt.Println("Задание B")
 	for i := 0; i < 5; i++ {
 		Massiv[i] = formula(Massiv[i], a, b)
 	}
