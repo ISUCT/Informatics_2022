@@ -4,9 +4,9 @@ import "isuct.ru/informatics2022/internal"
 
 func main() {
 	//Блок с Заданиями А и Б
-	internal.TestAB()
+	//internal.TestAB()
 	//Блок с CodeWars
-	internal.AllCodeWars()
+	//internal.AllCodeWars()
 	//Блок с экзаменационными заданиями
 	internal.AllTickets()
 }

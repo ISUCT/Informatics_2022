@@ -34,7 +34,6 @@ func AllTickets() {
 	fmt.Println(Moving("abcdefghijklmnopqrstuvwxyz"))
 	fmt.Println(Insertdashes(41100130))
 	Bingoornot([10]int{7, 2, 6, 1, 9, 14, 15, 8, 0, 4})
-
 }
 
 func Ticket1(num int) {
@@ -184,7 +183,6 @@ func Ticket18(height int) {
 	for i := 0; i < height; i++ {
 		fmt.Println(strings.Repeat(" ", height-i) + strings.Repeat(block, 1+2*i))
 	}
-
 }
 
 func Ticket19(width int, height int) [][]int {
@@ -254,7 +252,6 @@ func Sortedyesnohow(array []int) {
 			fmt.Println("no")
 		}
 	}
-
 }
 
 func Aretheysquare(array []int) {
@@ -273,7 +270,6 @@ func Aretheysquare(array []int) {
 			if numflag {
 				massivflag = 1
 			}
-
 		}
 	}
 	if massivflag == 1 {
@@ -283,7 +279,6 @@ func Aretheysquare(array []int) {
 	} else {
 		fmt.Println(nil)
 	}
-
 }
 
 func Fizzbuzz(n int) []string {
@@ -310,7 +305,8 @@ func Likesvsdislikes(array []string) string {
 	var Likes bool = false
 	var Dislikes bool = false
 	for i := 0; i < len(array); i++ {
-		if array[i] == "Dislike" {
+		switch array[i] {
+		case "Dislike":
 			if Dislikes {
 				Dislikes = false
 			} else {
@@ -319,7 +315,7 @@ func Likesvsdislikes(array []string) string {
 			if Likes {
 				Likes = false
 			}
-		} else if array[i] == "Like" {
+		case "Like":
 			if Likes {
 				Likes = false
 			} else {
@@ -328,6 +324,8 @@ func Likesvsdislikes(array []string) string {
 			if Dislikes {
 				Dislikes = false
 			}
+
+		default:
 		}
 	}
 
@@ -350,9 +348,9 @@ func Moving(s string) string {
 	}
 	for i := 0; i < len(array); i++ {
 		if int(array[i])+10 > 122 {
-			fstr = fstr + string(byte(array[i]+10-122+96))
+			fstr = fstr + string(array[i]+10-122+96)
 		} else {
-			fstr = fstr + string(byte(array[i]+10))
+			fstr = fstr + string(array[i]+10)
 		}
 	}
 	return fstr
@@ -406,7 +404,6 @@ func Bingoornot(array [10]int) {
 		case 15:
 			flag15 = true
 		default:
-
 		}
 	}
 	if flag2 {
