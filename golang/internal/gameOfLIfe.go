@@ -4,11 +4,21 @@ import (
 	"fmt"
 )
 
+func GameOfLife(grid [][]byte, step int) {
+	if !(isGridCorrect(grid)) {
+		fmt.Println("Grid check failed")
+		return
+	}
+	for i := 1; i <= step; i++ {
+		grid = printGrid(gol_Step(grid), i)
+	}
+}
+
 func printGrid(grid [][]byte, step int) [][]byte {
 	fmt.Println("Step ", step)
-	for y := 0; y < len(grid); y++ {
-		for x := 0; x < len(grid[0]); x++ {
-			switch grid[y][x] {
+	for x := 0; x < len(grid); x++ {
+		for y := 0; y < len(grid[0]); y++ {
+			switch grid[x][y] {
 			case 2:
 				fmt.Print("# ")
 			case 0:
@@ -24,16 +34,7 @@ func printGrid(grid [][]byte, step int) [][]byte {
 	return grid
 }
 
-func GameOfLife(grid [][]byte, step int) {
-	if !(isGridCorrect(grid)) {
-		fmt.Println("Grid check failed")
-	}
-	for i := 1; i <= step; i++ {
-		printGrid(gol_Step(grid), i)
-	}
-}
-
-func gol_Step(grid [][]byte) [][]byte {
+func checkNeighbors(grid [][]byte, PosX int, PosY int) int {
 	var nb_list [][]int8 = [][]int8{
 		{-1, -1},
 		{-1, 0},
@@ -44,35 +45,41 @@ func gol_Step(grid [][]byte) [][]byte {
 		{1, 0},
 		{1, 1},
 	}
-	var overwrite_pos [][]int
-	for PosY := 1; PosY < len(grid)-1; PosY++ {
-		for PosX := 1; PosX < len(grid[0])-1; PosX++ {
-			nb := 0
-			for nb_list_c := 0; nb_list_c < 8; nb_list_c++ {
-				if grid[PosX+int(nb_list[nb_list_c][0])][PosY+int(nb_list[nb_list_c][1])] == 1 {
-					nb++
-				}
-			}
+	nb := 0
+	for nb_list_c := 0; nb_list_c < 8; nb_list_c++ {
+		if grid[PosX+int(nb_list[nb_list_c][0])][PosY+int(nb_list[nb_list_c][1])] == 1 {
+			nb++
+		}
+	}
+	return nb
+}
+
+func gol_Step(grid [][]byte) [][]byte {
+	overwrite_grid := make([][]byte, len(grid))
+	for i := range grid {
+		overwrite_grid[i] = make([]byte, len(grid[i]))
+		copy(overwrite_grid[i], grid[i])
+	}
+	for PosX := 1; PosX < len(grid)-1; PosX++ {
+		for PosY := 1; PosY < len(grid[0])-1; PosY++ {
+			nb := checkNeighbors(grid, PosX, PosY)
 			switch grid[PosX][PosY] {
 			case 0:
 				if nb == 3 {
-					overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 1})
+					overwrite_grid[PosX][PosY] = 1
 				} else {
-					overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 0})
+					overwrite_grid[PosX][PosY] = 0
 				}
 			case 1:
 				if nb == 2 || nb == 3 {
-					overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 1})
+					overwrite_grid[PosX][PosY] = 1
 				} else {
-					overwrite_pos = append(overwrite_pos, []int{PosX, PosY, 0})
+					overwrite_grid[PosX][PosY] = 0
 				}
 			}
 		}
 	}
-	for ow_c := 0; ow_c < len(overwrite_pos); ow_c++ {
-		grid[overwrite_pos[ow_c][0]][overwrite_pos[ow_c][1]] = byte(overwrite_pos[ow_c][2])
-	}
-	return grid
+	return overwrite_grid
 }
 
 func isGridCorrect(grid [][]byte) bool {
