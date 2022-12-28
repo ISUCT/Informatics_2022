@@ -5,10 +5,7 @@ import (
 )
 
 func GameOfLife(grid [][]byte, step int) {
-	if !(isGridCorrect(grid)) {
-		fmt.Println("Grid check failed")
-		return
-	}
+	printGrid(grid, 0)
 	for i := 1; i <= step; i++ {
 		grid = printGrid(gol_Step(grid), i)
 	}
@@ -82,14 +79,14 @@ func gol_Step(grid [][]byte) [][]byte {
 	return overwrite_grid
 }
 
-func isGridCorrect(grid [][]byte) bool {
+func IsGridCorrect(grid [][]byte) bool {
 	for i := 0; i < len(grid[0])-1; i++ {
-		if grid[0][i] != byte(3) && grid[len(grid)-1][i] != byte(3) {
+		if grid[0][i] != byte(2) && grid[len(grid)-1][i] != byte(2) {
 			return false
 		}
 	}
-	for t := 1; t < len(grid[1])-2; t++ {
-		if grid[t][0] != byte(3) && grid[t][len(grid[0])-1] != byte(3) && len(grid[0]) == len(grid[t]) {
+	for t := 1; t < len(grid)-2; t++ {
+		if grid[t][0] != byte(2) && grid[t][len(grid[0])-1] != byte(2) {
 			return false
 		}
 	}

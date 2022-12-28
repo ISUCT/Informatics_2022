@@ -17,24 +17,14 @@ func main() {
 	fmt.Println(internal.TaskA(a, b, xn, xk, xd))
 	fmt.Println(internal.TaskB(a, b, []float64{1.9, 2.15, 2.34, 2.74, 3.16}))
 
-	fmt.Println("Задания с Codewars")
+	fmt.Println("\n Задания с Codewars")
 	fmt.Println(internal.EvenOrOdd(16))
 	fmt.Println(internal.CountingSheep([]bool{true, false, true, true, true}))
 	fmt.Println(internal.MonkeysCount(19))
 	fmt.Println(internal.PaperworkCount(23, 2))
 	fmt.Println(internal.HeroWithGunShootsDragons(37, 20))
 
-	sample_grid := [][]byte{
-		{2, 2, 2, 2, 2, 2, 2},
-		{2, 0, 0, 0, 0, 0, 2},
-		{2, 0, 0, 1, 0, 0, 2},
-		{2, 1, 0, 1, 0, 0, 2},
-		{2, 0, 1, 1, 0, 0, 2},
-		{2, 0, 0, 0, 0, 0, 2},
-		{2, 2, 2, 2, 2, 2, 2},
-	}
-
-	fmt.Println(internal.PolishCow("Gdzie jest biały węgorz?"))
+	//fmt.Println(internal.PolishCow("Gdzie jest biały węgorz?"))
 
 	//Code to convert []int to []string
 	nums := []int{6, 9, 3, 4, 3, 82, 11}
@@ -52,6 +42,16 @@ func main() {
 	}
 
 	fmt.Println(internal.SumOfMin(exampleArr, 3, 5))
+	fmt.Println("\n Game of Life")
+	sample_grid := [][]byte{
+		{2, 2, 2, 2, 2, 2, 2},
+		{2, 0, 0, 0, 0, 0, 2},
+		{2, 0, 0, 1, 0, 0, 2},
+		{2, 1, 0, 1, 0, 0, 2},
+		{2, 0, 1, 1, 0, 0, 2},
+		{2, 0, 0, 0, 0, 0, 2},
+		{2, 2, 2, 2, 2, 2, 2},
+	}
 
 	internal.GameOfLife(sample_grid, 4)
 }
