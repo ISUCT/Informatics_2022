@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"fmt"
 	"math"
 	"strings"
 )
@@ -84,4 +85,12 @@ func SumOfMin(arr [][]int, m int, n int) int {
 		res = res + int(min)
 	}
 	return res
+}
+
+func PrintDeadInside() {
+	x := 1000
+	for x > 0 {
+		fmt.Print(x, "-7", "\n")
+		x -= 7
+	}
 }
